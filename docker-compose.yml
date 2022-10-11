@@ -8,5 +8,5 @@ services:
     volumes:
       - ./react:/app/react
     ports:
-      - "3001:3001"
+      - "3000:3000"
     stdin_open: true
