@@ -6,9 +6,18 @@
 import "./Child.css";
 
 const Child = () => {
+  const hello = () => {};
+  const a = hello();
+
+  console.log(1 === 1);
+
+  for (let i = 0; i < 5; i++) {}
+
+  // JSX内では式しか使えない
   return (
     <div className="component">
       <h3>式と文</h3>
+      {}
     </div>
   );
 };
