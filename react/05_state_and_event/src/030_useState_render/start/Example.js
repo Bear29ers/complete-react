@@ -1,9 +1,10 @@
 import { useState } from "react";
 
+// stateとレンダリングの仕組み
 const Example = () => {
-  let displayVal;
-  let [ val, setVal ] = useState();
-  console.log('再レンダリングされました');
+  // let displayVal;
+  let [val, setVal] = useState();
+  // console.log("再レンダリングされました");
   return (
     <>
       <input
