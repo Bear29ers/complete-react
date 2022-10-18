@@ -9,7 +9,11 @@ const Example = () => {
   const [person, setPerson] = useState(personObj);
 
   const changeName = (e) => {
-    setPerson({ name: e.target.value, age: person.age });
+    console.log({ ...person } === person);
+    // オブジェクトのstate更新は新しいオブジェクトを設定する必要がある
+    // setPerson({ name: e.target.value, age: person.age });
+    // スプレッド構文で実装
+    setPerson({ ...person, name: e.target.value });
   };
 
   const changeAge = (e) => {
