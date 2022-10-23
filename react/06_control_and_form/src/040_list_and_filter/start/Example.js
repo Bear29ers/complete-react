@@ -5,7 +5,6 @@ const animals = ["Dog", "Cat", "Rat"];
 const Example = () => {
   const [filterVal, setFilterVal] = useState("");
 
-  console.log(animals.filter((animal) => animal === "Dog"));
   return (
     <>
       <h3>配列のフィルター</h3>
