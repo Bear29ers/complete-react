@@ -3,14 +3,23 @@ import { useState } from "react";
 const animals = ["Dog", "Cat", "Rat"];
 
 const Example = () => {
+  const [filterVal, setFilterVal] = useState("");
+
+  console.log(animals.filter((animal) => animal === "Dog"));
   return (
     <>
       <h3>配列のフィルター</h3>
+      <input
+        type="text"
+        value={filterVal}
+        onChange={(e) => setFilterVal(e.target.value)}
+      />
       <ul>
         {animals
+          .filter((animal) => animal.indexOf(filterVal) !== -1)
           .map((animal) => (
-          <li>{animal}</li>
-        ))}
+            <li key={animal}>{animal}</li>
+          ))}
       </ul>
     </>
   );
