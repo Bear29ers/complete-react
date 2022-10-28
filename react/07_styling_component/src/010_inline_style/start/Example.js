@@ -17,11 +17,17 @@ const Example = () => {
     background: isSelected ? "pink" : "",
   };
 
+  // インラインスタイルの注意点
+  // ・同じスタイルを適用したい場合は同じstyle属性の値（オブジェクト）を指定する必要がある
+  // ・擬似セレクタが使用できない（::before、::after、::hover、::active）
+  // ・メディアクエリも使用できない（@media）
+
   return (
     <>
       <button onClick={clickHandler} style={style}>
         ボタン
       </button>
+      <button style={style}>ボタン2</button>
       <div style={{ textAlign: "center" }}>
         {isSelected && "クリックされました。"}
       </div>
