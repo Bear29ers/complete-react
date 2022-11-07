@@ -1,12 +1,21 @@
-import { useRef, forwardRef } from "react";
+import { useRef, forwardRef, useImperativeHandle } from "react";
 
-/* POINT forwardRef
-子コンポーネント内の DOM に直接アクセスしたいときに使います。
-refは、親から子コンポーネントへprops形式で渡して参照するということができないため、
-参照したい場合は子コンポーネント内でfowardRefを使用する必要があります。
-*/
+// 親からのrefへの参照を制限
 const Input = forwardRef((props, ref) => {
-  return <input type="text" ref={ref} />;
+  const inputRef = useRef();
+
+  /* useImperativeHandle
+  第1引数: 親コンポーネントから受け取ったrefオブジェクト
+  第2引数: 追加したいメソッドが格納されたオブジェクトを返す関数
+  */
+  useImperativeHandle(ref, () => ({
+    myFocus() {
+      inputRef.current.focus();
+      console.log("focus取得");
+    },
+  }));
+
+  return <input type="text" ref={inputRef} />;
 });
 
 const Example = () => {
@@ -14,7 +23,7 @@ const Example = () => {
   return (
     <>
       <Input ref={ref} />
-      <button onClick={() => ref.current.focus()}>
+      <button onClick={() => ref.current.myFocus()}>
         インプット要素をフォーカスする
       </button>
     </>
