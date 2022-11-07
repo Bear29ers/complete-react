@@ -14,9 +14,8 @@ const ModalPortal = ({ children }) => {
 const Example = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    
-    <div onClick={() => console.log('空のdiv')}>
-      <div className="container end" onClick={() => console.log('container')} />
+    <div onClick={() => console.log("空のdiv")}>
+      <div className="container end" onClick={() => console.log("container")} />
 
       <button
         type="button"
@@ -25,14 +24,12 @@ const Example = () => {
       >
         モーダルを表示する
       </button>
-      
+
       {modalOpen && (
-        
         <ModalPortal>
           <Modal handleCloseClick={() => setModalOpen(false)} />
         </ModalPortal>
       )}
-      
     </div>
   );
 };
