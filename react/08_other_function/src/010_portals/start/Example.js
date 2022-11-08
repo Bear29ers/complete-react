@@ -8,12 +8,11 @@ import Modal from "./components/Modal";
 */
 
 /* POINT createPortalはどんなときに使うか？
-子要素は親要素のスタイルによって表示に制限を受ける場合があります。
+子要素は親要素のスタイルによって表示に制限を受ける場合がある。
 （overflow: hidden 、 z-index 、 width　など・・・ ）
-それらの制限なく、子要素が親要素を「飛び出して」表示する必要があるときにcreatePortalを使うのが有効です。
-モーダル、ポップアップ、トーストは使用の代表例です。
+それらの制限なく、子要素が親要素を「飛び出して」表示する必要があるときにcreatePortalを使うのが有効。
+モーダル、ポップアップ、トーストは使用の代表例。
 */
-
 const ModalPortal = ({ children }) => {
   const target = document.querySelector(".container.start");
   return createPortal(children, target);
@@ -22,8 +21,11 @@ const ModalPortal = ({ children }) => {
 const Example = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div onClick={() => console.log('空のdiv')}>
-      <div className="container start" onClick={() => console.log('container')}></div>
+    <div onClick={() => console.log("空のdiv")}>
+      <div
+        className="container start"
+        onClick={() => console.log("空のdiv")}
+      ></div>
 
       <button
         type="button"

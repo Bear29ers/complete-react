@@ -1,8 +1,11 @@
+/* css-in-js（styled-components）*/
 import { useState } from "react";
 import styled from "styled-components";
 
 console.dir(styled);
 // タグ付きテンプレート
+/* POINT 生成する要素を指定し、スタイルをテンプレートリテラルで記述する
+React要素扱いなので変数名は大文字で記述 */
 const StyledButton = styled.button`
   margin: auto;
   border-radius: 9999px;
@@ -12,6 +15,8 @@ const StyledButton = styled.button`
   height: 60px;
   font-weight: bold;
   cursor: pointer;
+  /* POINT valueを関数にすることで、引数をpropsを受け取ることができる。
+  { isSelected }の部分を変更することで受け取る名前を変更することができる */
   background: ${({ isSelected }) => (isSelected ? "pink" : "")};
 
   @media (max-width: 600px) {
@@ -22,6 +27,7 @@ const StyledButton = styled.button`
 const OrangeButton = styled(StyledButton)`
   background-color: orange;
 
+  /* 擬似クラスの追加 */
   :hover,
   :active {
     color: red;

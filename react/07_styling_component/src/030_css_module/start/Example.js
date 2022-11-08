@@ -1,3 +1,12 @@
+/* POINT css moduleのメリットとデメリット
+  メリット
+    class名を気にすることなくCSSを記述することができる。
+    CSSと変わらないので学習コストがない
+    標準の機能なので、導入コストがない
+  デメリット
+    将来非推奨なる可能性がある。
+    https://github.com/webpack-contrib/css-loader/issues/1050#:~:text=In%20the%20near%20future%20we%20want%20to%20deprecate%20CSS%20modules
+  */
 import { useState } from "react";
 
 import SubButton from "./components/SubButton";
