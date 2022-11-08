@@ -1,4 +1,4 @@
-const Hello = (props) => {
+f;const Hello = (props) => {
 
   // POINT propsは読み取り専用
   // props.name = 'Bob';

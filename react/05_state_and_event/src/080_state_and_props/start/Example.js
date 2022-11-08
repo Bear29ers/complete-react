@@ -4,7 +4,8 @@ const Example = () => {
   const [toggle, setToggle] = useState(true);
   /* stateをpropsで渡すケース
   ・コンポーネントが消滅する可能性がある時（stateの値も消えてしまうため）
-  ・特定のstateを複数の子コンポーネントで共有したいとき */
+  ・特定のstateを複数の子コンポーネントで共有したいとき
+  */
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
   const toggleComponent = () => {

@@ -12,6 +12,7 @@ const Example = () => {
 
   return (
     <>
+      {/* イベントハンドラの末尾に()は付けない */}
       <button onClick={clickHander}>クリックしてね</button>
       <button onClick={clickHander2}>クリックしてね</button>
     </>

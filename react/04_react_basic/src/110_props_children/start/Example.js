@@ -6,6 +6,9 @@ const profile = [
   { name: "Jane", age: 28, country: "UK", color: "red" },
 ];
 
+/* コンポーネントの子要素はprops.childrenに渡る
+コンポーネントが子要素を持つ場合、props.childrenという特別なプロパティとして受け渡される
+*/
 const Example = () => {
   return (
     <div>

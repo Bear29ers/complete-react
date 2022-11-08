@@ -4,6 +4,7 @@ const Example = () => {
   const orderObj = { item: "apple", count: 10 };
   const [order, setOrder] = useState(orderObj);
   const changeItem = (e) => {
+    // オブジェクトを複製して新しいオブジェクトを生成
     setOrder((order) => ({ ...order, item: e.target.value }));
   };
   const countUp = () => {

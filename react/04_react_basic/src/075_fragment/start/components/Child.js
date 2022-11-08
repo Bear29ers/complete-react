@@ -2,8 +2,13 @@ import { Fragment } from "react";
 import "./Child.css";
 
 const Child = () => {
+  /* Fragmentがなぜ必要なのか？
+  Reactのコンポーネントはルート要素が1つでなければならない。（独立したツリー構造になっている）というルールがある。
+  そのため、Fragmentを使うことで、複数の要素を返すコンポーネントを余分なノードを追加することなくまとめられる。
+  */
   return (
-    <Fragment key="">
+    <Fragment key="1">
+      {/* keyはFragmentが受け取ることができる唯一の属性 */}
       <div className="component">
         <h3>Hello Component</h3>
       </div>

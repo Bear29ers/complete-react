@@ -8,6 +8,7 @@ const Example = () => {
   };
   return (
     <>
+      {/* propsには全てのタイプの値を渡すことができる */}
       <Child {...o} fn={hello} bool obj={{ name: "Tom", age: 18 }} />
       {/* <Child color="red" /> */}
     </>
