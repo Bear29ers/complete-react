@@ -1,3 +1,4 @@
+// エラーメッセージから問題を解消
 import { useState } from "react";
 
 const Example = () => {
