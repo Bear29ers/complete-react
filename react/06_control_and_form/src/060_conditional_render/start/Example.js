@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-// if文、&&、??（Null合体演算子）、三項演算子
-// A ?? B
-// A null undefined
-
+/* 条件分岐 if文、&&、??（Null合体演算子）、三項演算子
+A ?? B（Aがnullもしくはundefinedの時、Bを使う）
+*/
 const Example = () => {
   const animals = ["Dog", "Cat", null, "Rat"];
 
@@ -24,6 +23,7 @@ const Example = () => {
             return isMatch;
           })
           .map((animal) => {
+            // if文
             // if (animal === "Dog") {
             //   return <li key={animal}>{animal}★</li>;
             // } else {
