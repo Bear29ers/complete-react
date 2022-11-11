@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// POINT 複数チェックボックスの実装
+// 複数チェックボックスの実装
 const Example = () => {
   const [fruits, setFruits] = useState([
     { label: "Apple", value: 100, checked: false },
@@ -22,8 +22,8 @@ const Example = () => {
 
     setFruits(newFruits);
 
-    // let sumVal = 0;
     // forEachバージョン
+    // let sumVal = 0;
     // newFruits.forEach((fruit) => {
     //   if (fruit.checked) {
     //     sumVal += fruit.value;
