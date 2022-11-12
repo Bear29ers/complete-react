@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-/* POINT useRefでDOMを取得
+/* useRefでDOMを取得
 refオブジェクトでref属性に渡すとDOMを参照することができる。
 */
 const Case1 = () => {
@@ -25,7 +25,7 @@ const Case1 = () => {
   );
 };
 
-// POINT 動画の再生・停止を制御
+// 動画の再生・停止を制御
 const Case2 = () => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef();
@@ -52,7 +52,7 @@ const Case2 = () => {
 
 const createTimeStamp = () => new Date().getTime();
 
-/* POINT useRefは再レンダリングされない。
+/* useRefは再レンダリングされない。
 書き換え可能な情報としてコンポーネントに保持させておくことができる。
 stateは更新されるごとに再レンダーされるが、refオブジェクトの中身が変わっても再レンダーが走ることはない。
 */
@@ -85,7 +85,7 @@ const Case3 = () => {
   );
 };
 
-/* POINT refを使うべきタイミング
+/* refを使うべきタイミング
 Reactでは一般的に、propsを通して親から子へ作用させる、というデータフローが原則。
 refを使ってコンポーネントに作用を起こすことは、その原則を崩す行為なので多用は避ける。
 

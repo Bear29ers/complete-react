@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 console.dir(styled);
 // タグ付きテンプレート
-/* POINT 生成する要素を指定し、スタイルをテンプレートリテラルで記述する
+/* 生成する要素を指定し、スタイルをテンプレートリテラルで記述する
 React要素扱いなので変数名は大文字で記述 */
 const StyledButton = styled.button`
   margin: auto;
@@ -15,15 +15,17 @@ const StyledButton = styled.button`
   height: 60px;
   font-weight: bold;
   cursor: pointer;
-  /* POINT valueを関数にすることで、引数をpropsを受け取ることができる。
+  /* valueを関数にすることで、引数をpropsを受け取ることができる。
   { isSelected }の部分を変更することで受け取る名前を変更することができる */
   background: ${({ isSelected }) => (isSelected ? "pink" : "")};
 
+  /* メディアクエリ */
   @media (max-width: 600px) {
     border-radius: 0;
   }
 `;
 
+// スタイルの継承。styled()でラップする
 const OrangeButton = styled(StyledButton)`
   background-color: orange;
 
@@ -44,6 +46,19 @@ const Example = () => {
 
   const clickHandler = () => setIsSelected((prev) => !prev);
 
+  /* css-in-jsのメリットとデメリット
+  メリット
+    ・スタイルをコンポーネントで定義するので、外部のCSSに依存することなくコンポーネント単体で動作する
+    ・JavaScriptで記述するため、JSの文法が使用できたり、propsとして値を渡すこともできる
+    ・ユニークなクラス名が自動生成され、他のコンポーネントに影響を与えないことが保証される
+    ・CSSの設計が必要なくなる
+    ・コンポーネントで完結しているため、他のプロジェクトで再利用がしやすい
+  デメリット
+    ・自動生成されるユニークなクラス名が読めない
+    ・CSSに比べパフォーマンスに劣る
+    ※ 些細な差なのでデメリットというほどでもない
+    ※ どうしても気になる方は、Next.jsを使用することでパフォーマンス面は気にしなくて良くなる
+  */
   return (
     <>
       <StyledButton isSelected={isSelected} onClick={clickHandler}>

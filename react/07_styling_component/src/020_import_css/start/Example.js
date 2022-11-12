@@ -8,8 +8,8 @@ const Example = () => {
 
   return (
     <>
-      {/* POINT 動的なスタイルの適用 */}
-      {/* POINT クラスの付け外しに論理積（&&）は使用してはいけない。
+      {/* 動的なスタイルの適用 */}
+      {/* クラスの付け外しに論理積（&&）は使用してはいけない。
       例）className={`btn ${isSelected && 'selected'}`}
 
       isSelectedがfalseの場合、className='btn false'になってしまう。*/}
