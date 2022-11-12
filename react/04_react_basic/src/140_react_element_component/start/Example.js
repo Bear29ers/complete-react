@@ -1,3 +1,4 @@
+// React要素とコンポーネントの関係
 import React from "react";
 
 const Hello = () => {

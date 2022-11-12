@@ -1,4 +1,4 @@
-/* POINT
+/* インラインスタイル
   再利用性が低い
   擬似要素やメディアクエリが使用できない
   レンダリングの度に計算されるのでパフォーマンスが劣る
@@ -12,7 +12,7 @@ const Example = () => {
 
   const clickHandler = () => setIsSelected((prev) => !prev);
 
-  /* POINT インラインスタイルのメリットとデメリット
+  /* インラインスタイルのメリットとデメリット
   メリット
     直感的に記述することができる
   デメリット
@@ -21,9 +21,9 @@ const Example = () => {
     擬似セレクタやメディアクエリにも対応していないため、実装しようとするとわかりづらいコードになってしまう
   */
 
-  // POINT style属性に適応させるスタイルをオブジェクトで記述します
+  // style属性に適応させるスタイルをオブジェクトで記述します
   const style = {
-    /* POINT 単位を書かない場合
+    /* 単位を書かない場合
     単位を書かずに文字列ではなく数字を与えてあげると、reactが自動で解釈し値にpxを付けてくれる */
     width: 120,
     height: 60,
@@ -33,7 +33,7 @@ const Example = () => {
     cursor: "pointer",
     border: "none",
     margin: "auto",
-    /* POINT 三項演算子を使用してisSelectedがtrueの場合は'pink' falseの場合は空文字( '' )を与えている。
+    /* 三項演算子を使用してisSelectedがtrueの場合は'pink' falseの場合は空文字( '' )を与えている。
     valueに空文字を与えた場合、プロパティは適用されない */
     background: isSelected ? "pink" : "",
   };

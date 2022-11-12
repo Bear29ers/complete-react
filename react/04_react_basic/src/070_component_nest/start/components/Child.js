@@ -1,5 +1,6 @@
-import "./Child.css";
+// Listコンポーネントをnamed import
 import { List } from "./List";
+import "./Child.css";
 
 const Child = () => {
   return (
@@ -10,4 +11,5 @@ const Child = () => {
   );
 };
 
+// コンポーネントをdefault export
 export default Child;

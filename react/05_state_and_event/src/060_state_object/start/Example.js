@@ -1,6 +1,7 @@
-/*
+/* 
 プリミティブ型: 1, 'str', boo, 10n, Symbol(), null, undefined
 オブジェクト型: {}, []などのプリミティブ型以外
+オブジェクト型のstateを変更する場合には必ず新しいオブジェクトを作成する
 */
 import { useState } from "react";
 

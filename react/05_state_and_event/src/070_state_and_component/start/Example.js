@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// stateとコンポーネントの関係
 const Example = () => {
   const [toggle, setToggle] = useState(true);
   const toggleComponent = () => {
@@ -7,6 +8,7 @@ const Example = () => {
   };
   return (
     <>
+      {/* コンポーネントの位置によってstateが識別される */}
       <button onClick={toggleComponent}>toggle</button>
       {/* titleが変わるだけでコンポーネントの表示位置に変化はないので、
       この場合、Reactはstateの値を引き継ぐ仕様になっている

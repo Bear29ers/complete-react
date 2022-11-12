@@ -1,3 +1,4 @@
+// コンポーネントのリファクタリング
 import { useState } from "react";
 import AnimalList from "./components/AnimalList";
 import AnimalFilter from "./components/AnimalFilter";
