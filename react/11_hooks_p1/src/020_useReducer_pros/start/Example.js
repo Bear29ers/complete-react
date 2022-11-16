@@ -24,6 +24,7 @@ const reducer = (prev, { type, step }) => {
 // useReducerとuseStateの違い
 const Example = () => {
   const [state, setState] = useState(0);
+  // stateを更新する処理をコンポーネントから切り離すことができる
   const [rstate, dispatch] = useReducer(reducer, 0);
 
   const step = 2;
