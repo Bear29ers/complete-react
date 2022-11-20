@@ -4,6 +4,7 @@
   <li><a href="#01">Reactの基礎</a></li>
   <li><a href="#02">イベントリスナーと状態管理（state）</a></li>
   <li><a href="#03">制御構文とフォームの制御</a></li>
+  <li><a href="#04">Reactでのスタイル適用方法</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -235,6 +236,90 @@ React は全ての子の React 要素を変更してしまい、全ての Real D
   <li>キーには必ず一意の値を設定する。</li>
   <li>キーに設定した値は変更しない。</li>
   <li>配列のインデックスはなるべく使わない。</li>
+</ul>
+<br>
+<br>
+
+<h2 id="04">React でのスタイル適用方法</h2>
+
+<ul>
+  <li><a href="#04-1">CSSファイルの読み込み</a></li>
+  <li><a href="#04-2">インラインスタイル</a></li>
+  <li><a href="#04-3">CSS Modules</a></li>
+  <li><a href="#04-4">CSS in JS</a></li>
+</ul>
+
+<h3 id="04-1">CSSファイルの読み込み</h3>
+
+```jsx
+import "./Example.css";
+```
+
+CSS ファイルに class を定義して、JSX の className に適用する
+
+##### 特徴
+
+<ul>
+  <li>グローバルスコープとなるため、クラス名の衝突が起きやすい</li>
+  <li>ルートファイル（`App.js`等）でグローバルなスタイルを当てたいときに使用する</li>
+</ul>
+<br>
+<br>
+
+<h3 id="04-2">インラインスタイル</h3>
+
+```jsx
+style={{ color: 'red' }}
+```
+
+JSX の style 属性にオブジェクトを渡す
+
+##### 特徴
+
+<ul>
+  <li>再利用性が低い</li>
+  <li>擬似要素やメディアクエリが使用できない</li>
+  <li>レンダリングの度に計算されるので、パフォーマンスが劣る</li>
+  <li>動的で頻繁に計算されるスタイルの適用</li>
+</ul>
+<br>
+<br>
+
+<h3 id="04-3">CSS Modules</h3>
+
+```jsx
+import styles from "./Example.module.css";
+```
+
+CSS ファイルをモジュールとして JS ファイルに読み込んで、コンポーネントごとにローカルスコープを作ってスタイルを適用する
+
+##### 特徴
+
+<ul>
+  <li>クラス名の衝突が起きない</li>
+  <li>`create-react-app`で設定済みのため、すぐ使える</li>
+  <li>将来、非推奨になる可能性がある</li>
+  <li>CSSとJSが2つのファイルに分かれる</li>
+</ul>
+<br>
+<br>
+
+<h3 id="04-4">CSS in JS</h3>
+
+```jsx
+const StyledButton = styled.div``;
+```
+
+CSS を JS ファイル内に記載して、CSS を適用したコンポーネントを作成する
+
+##### 特徴
+
+<ul>
+  <li>クラス名の衝突が起きない</li>
+  <li>ライブラリを導入する必要がある</li>
+  <li>CSSとJSが1つのファイルにまとまる</li>
+  <li>propsを参照して動的にスタイルできる</li>
+  <li>擬似要素やメディアクエリが使用できる</li>
 </ul>
 <br>
 <br>
