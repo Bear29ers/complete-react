@@ -3,9 +3,10 @@ import { useReducer, useState } from "react";
 // useState:状態の更新の仕方は利用側に託す。
 // useReducer:状態の更新の仕方も状態側で担当する。
 
-// 状態と処理の分離
-// useState: コンポーネントで更新用の処理を保持
-// useReducer: stateと一緒に更新用の処理を保持
+/* 状態と処理の分離
+useState: コンポーネントで更新用の処理を保持
+useReducer: stateと一緒に更新用の処理を保持
+*/
 
 // 純粋性（純粋関数）
 // 特定の引数に特定の戻り値
@@ -16,19 +17,20 @@ const reducer = (prev, { type, step }) => {
     case "-":
       return prev - step;
     default:
-      throw new Error('不明なactionです。')
+      throw new Error("不明なactionです。");
   }
-}
+};
 
-// 不変性（Immutability）
+// useReducerとuseStateの違い
 const Example = () => {
   const [state, setState] = useState(0);
+  // stateを更新する処理をコンポーネントから切り離すことができる
   const [rstate, dispatch] = useReducer(reducer, 0);
-  
+
   const step = 2;
   const countUp = () => {
     setState((prev) => {
-      return prev + step
+      return prev + step;
     });
   };
   const rcountUp = () => {
