@@ -1,40 +1,44 @@
+// useEffectのクリーンアップ処理
 import { useEffect, useState } from "react";
+
 const Example = () => {
   const [isDisp, setIsDisp] = useState(true);
 
   return (
     <>
-      {isDisp && <Timer/>}
-      <button onClick={() => setIsDisp(prev => !prev)}>トグル</button>
+      {isDisp && <Timer />}
+      <button onClick={() => setIsDisp((prev) => !prev)}>トグル</button>
     </>
-  )
-}
+  );
+};
+
 const Timer = () => {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
-    // console.log('init');
+    // console.log("init");
     let intervalId = null;
-    intervalId = window.setInterval(() => {
-      // console.log('interval called');
-      setTime(prev => prev + 1);
+    intervalId = setInterval(() => {
+      console.log("interval called");
+      setTime((prev) => prev + 1);
     }, 1000);
+    /* 
+    コンポーネントが消える際に実行されるコールバック関数（クリーンアップ関数）
+    コンポーネントが削除されても実行され続けるsetInterval関数などはメモリリークに繋がりやすい */
     return () => {
-      window.clearInterval(intervalId)
-      // console.log('end');
-    }
-  }, [])
-  
-  useEffect(() => {
-    // console.log('updated');
-    
-    document.title = 'counter:' + time;
-    window.localStorage.setItem('time-key', time);
+      window.clearInterval(intervalId);
+      // debugger;
+      // console.log("end");
+    };
+  }, []);
 
+  useEffect(() => {
+    // console.log("updated");
+    document.title = "counter" + time;
+    window.localStorage.setItem("time-key", time);
     return () => {
-      // debugger
-      // console.log('updated end');
-    }
+      // console.log("updated end");
+    };
   }, [time]);
 
   return (
@@ -42,7 +46,7 @@ const Timer = () => {
       <time>{time}</time>
       <span>秒経過</span>
     </h3>
-    );
+  );
 };
 
 export default Example;
