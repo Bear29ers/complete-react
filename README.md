@@ -5,6 +5,7 @@
   <li><a href="#02">イベントリスナーと状態管理（state）</a></li>
   <li><a href="#03">制御構文とフォームの制御</a></li>
   <li><a href="#04">Reactでのスタイル適用方法</a></li>
+  <li><a href="#05">ReactでDOM操作を行う方法</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -323,3 +324,86 @@ CSS を JS ファイル内に記載して、CSS を適用したコンポーネ�
 </ul>
 <br>
 <br>
+
+<h2 id="05">ReactでDOM操作を行う方法</h2>
+
+<ul>
+  <li><a href="#05-1">ポータル</a></li>
+  <li><a href="#05-2">useRefとは</a></li>
+  <li><a href="#05-3">refの特徴</a></li>
+  <li><a href="#05-4">refを使ったDOMの操作</a></li>
+</ul>
+
+<h3 id="05-1">ポータル</h3>
+
+ポータルの子要素を、直接の親要素ではなく別の DOM 要素にマウントすることができる。
+
+<img src="https://user-images.githubusercontent.com/39920490/204136253-5a0b0143-ccd2-4aca-a4cb-80d45da878a2.png" width="100%" style="max-width: 1000px" alt="ポータル" />
+<br>
+<br>
+
+<h3 id="05-2">useRefとは</h3>
+
+再レンダリングを発生させず値を保持する方法
+
+```jsx
+const ref = useRef(initialValue);
+```
+
+<ul>
+  <li>useRefは"refオブジェクト"を返す。</li>
+  <li>currentプロパティに値が設定される。</li>
+  <li>
+    ref.currentで値にアクセスできる。<br>
+    値は読み書き可能
+  </li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/39920490/204136515-fa9a06f2-499c-4a68-814c-33aeee0ea4d7.png" width="100%" style="max-width:300px" alt="useRefとは" />
+<br>
+<br>
+
+<h3 id="05-3">refの特徴</h3>
+
+<ul>
+  <li>
+    再レンダリングされても情報が保存される。<br>
+    ※通常の変数はレンダリングの度に初期化される。
+  </li>
+  <li>
+    refの値を変更しても再レンダリングがトリガーされない。<br>
+    ※同じく値を保持できるstateは変更されると再レンダリングされる。
+  </li>
+  <li>refオブジェクトをJSXのref属性に渡すとそのDOMにアクセスできるようになる。</li>
+</ul>
+
+↓
+
+**最も一般的な利用法**
+
+<br>
+<br>
+
+<h3 id="05-4">refを使ったDOMの操作</h3>
+
+① ref オブジェクトの作成
+
+```jsx
+const inputRef = useRef(null);
+```
+
+② 操作したい DOM に対応する JSX の ref 属性に渡す
+
+```jsx
+<input ref={inputRef}>
+```
+
+③ React は DOM への参照を`inputRef.current`に格納する
+
+④ イベントハンドラなどで DOM にアクセスする
+
+```jsx
+inputRef.current.focus();
+```
+
+⑤ イベントハンドラを`<button>`のクリックイベントなどで発火させる
