@@ -6,6 +6,7 @@
   <li><a href="#03">制御構文とフォームの制御</a></li>
   <li><a href="#04">Reactでのスタイル適用方法</a></li>
   <li><a href="#05">ReactでDOM操作を行う方法</a></li>
+  <li><a href="#06">Immutability（不変性）</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -442,3 +443,39 @@ React のデフォルトでは、コンポーネントが他のコンポーネ�
 <img src="https://user-images.githubusercontent.com/39920490/204547960-c8105ee3-210e-4ec0-877b-79802513f3a2.png" width="100%" style="max-width:200px" alt="useRefとは" />
 
 子コンポーネント内で`useImperativeHandle`に渡したメソッドが、親の ref に登録され、`ref.current."メソッド名"`で実行できるようになる。
+<br>
+<br>
+
+<h2 id="06">Immutability（不変性）</h2>
+
+<ul>
+  <li><a href="#06-1">前提</a></li>
+  <li><a href="#06-2">イミュータブル（immutable）な値の変更</a></li>
+  <li><a href="#06-3">ミュータブル（mutable）な値の変更</a></li>
+</ul>
+
+<h3 id="06-1">前提</h3>
+
+**イミュータブル（immutable）**
+
+書き換えが不可（元の値は変わらない）
+
+_文字列、数値、BigInt、真偽値、undefined、シンボル_
+<br>
+
+**ミュータブル（mutable）**
+
+_イミュータブルな値以外。オブジェクト（Object、Array など）_
+
+<br>
+<br>
+
+<h3 id="06-2">イミュータブル（immutable）な値の変更</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/204672978-8e6c963d-a743-4d18-964f-21cb929b3d61.png" width="100%" style="max-width:800px" alt="イミュータブル（immutable）な値の変更" />
+
+例えば数値のようなイミュータブルな値を変更すると、値自体が変更されるのではなく、新しい別の値に参照が向けられるようになる。
+<br>
+<br>
+
+<h3 id="06-3">ミュータブル（mutable）な値の変更</h3>
