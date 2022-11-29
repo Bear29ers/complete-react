@@ -332,6 +332,9 @@ CSS を JS ファイル内に記載して、CSS を適用したコンポーネ�
   <li><a href="#05-2">useRefとは</a></li>
   <li><a href="#05-3">refの特徴</a></li>
   <li><a href="#05-4">refを使ったDOMの操作</a></li>
+  <li><a href="#05-5">他のコンポーネントのDOMの操作</a></li>
+  <li><a href="#05-6">useRefの使用上の注意</a></li>
+  <li><a href="#05-7">useImperativeHandle</a></li>
 </ul>
 
 <h3 id="05-1">ポータル</h3>
@@ -407,3 +410,35 @@ inputRef.current.focus();
 ```
 
 ⑤ イベントハンドラを`<button>`のクリックイベントなどで発火させる
+<br>
+<br>
+
+<h3 id="05-5">他のコンポーネントのDOMの操作</h3>
+
+React のデフォルトでは、コンポーネントが他のコンポーネントの DOM にアクセスすることはできない
+
+↓
+
+アクセスされる側のコンポーネントがそれを許すかどうかを決めることができる（`forwardRef`）
+
+<img src="https://user-images.githubusercontent.com/39920490/204544878-c55c6848-7a91-4c44-a862-6c34eea6ee5c.png" width="100%" style="max-width:500px" alt="他のコンポーネントのDOMの操作" />
+<br>
+<br>
+
+<h3 id="05-6">useRefの使用上の注意</h3>
+
+<ul>
+  <li>refはレンダリングに使用しない値を保持するための逃げ道であり、頻繁に必要とするものではない。（ReactではDOMは直接操作するものではなく、あくまでReactの機能として変更が加えられるもの</li>
+  <li>レンダリング中はref.currentを参照・変更してはならない（初回レンダリングは除く）。通常はイベントハンドラからアクセスする。</li>
+  <li>DOMを手動で追加・削除する場合は、ReactのDOMの操作と干渉しないように注意する。</li>
+</ul>
+<br>
+<br>
+
+<h3 id ="05-7">useImperativeHandle</h3>
+
+`forwardRef`と共に使用する。親から受け取った ref オブジェクトをカスタマイズすることができる。
+
+<img src="https://user-images.githubusercontent.com/39920490/204547960-c8105ee3-210e-4ec0-877b-79802513f3a2.png" width="100%" style="max-width:200px" alt="useRefとは" />
+
+子コンポーネント内で`useImperativeHandle`に渡したメソッドが、親の ref に登録され、`ref.current."メソッド名"`で実行できるようになる。
