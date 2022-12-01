@@ -452,6 +452,8 @@ React のデフォルトでは、コンポーネントが他のコンポーネ�
   <li><a href="#06-1">前提</a></li>
   <li><a href="#06-2">イミュータブル（immutable）な値の変更</a></li>
   <li><a href="#06-3">ミュータブル（mutable）な値の変更</a></li>
+  <li><a href="#06-4">Immutabilityの保持</a></li>
+  <li><a href="#06-5">関数型プログラミングとImmutabilityの保持</a></li>
 </ul>
 
 <h3 id="06-1">前提</h3>
@@ -479,3 +481,27 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 <br>
 
 <h3 id="06-3">ミュータブル（mutable）な値の変更</h3>
+
+変数の参照先が変わらないため、配列の中身が変わっていることになる（オブジェクトも同様）。
+
+<img src="https://user-images.githubusercontent.com/39920490/205046510-b2bfcc95-f5b3-44fc-987e-b787c094dd98.png" width="100%" style="max-width:1000px" alt="ミュータブル（mutable）な値の変更" />
+<br>
+<br>
+
+<h3 id="06-4">Immutabilityの保持</h3>
+
+コピーをすることで変数の参照先を変え、mutableな配列やオブジェクトをimmutableのように扱う。
+
+<img src="https://user-images.githubusercontent.com/39920490/205050746-7f59a8de-0824-464c-941b-8d8b11ae1f23.png" width="100%" style="max-width:1000px" alt="Immutabilityの保持" />
+<br>
+<br>
+
+<h3 id="06-5">関数型プログラミングとImmutabilityの保持</h3>
+
+mutableなオブジェクトをimmutableとして取り扱う。
+
+関数内で使用する場合は必ずオブジェクトをコピーして使用する。
+
+<img src="https://user-images.githubusercontent.com/39920490/205051198-e91ba971-0153-4e5e-8f37-2928216eef38.png" width="100%" style="max-width:1200px" alt="関数型プログラミングとImmutabilityの保持" />
+<br>
+<br>
