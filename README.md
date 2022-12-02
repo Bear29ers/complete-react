@@ -7,6 +7,7 @@
   <li><a href="#04">Reactでのスタイル適用方法</a></li>
   <li><a href="#05">ReactでDOM操作を行う方法</a></li>
   <li><a href="#06">Immutability（不変性）</a></li>
+  <li><a href="#07">関数型プログラミング</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -490,7 +491,7 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 
 <h3 id="06-4">Immutabilityの保持</h3>
 
-コピーをすることで変数の参照先を変え、mutableな配列やオブジェクトをimmutableのように扱う。
+コピーをすることで変数の参照先を変え、mutable な配列やオブジェクトを immutable のように扱う。
 
 <img src="https://user-images.githubusercontent.com/39920490/205050746-7f59a8de-0824-464c-941b-8d8b11ae1f23.png" width="100%" style="max-width:1000px" alt="Immutabilityの保持" />
 <br>
@@ -498,10 +499,135 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 
 <h3 id="06-5">関数型プログラミングとImmutabilityの保持</h3>
 
-mutableなオブジェクトをimmutableとして取り扱う。
+mutable なオブジェクトを immutable として取り扱う。
 
 関数内で使用する場合は必ずオブジェクトをコピーして使用する。
 
 <img src="https://user-images.githubusercontent.com/39920490/205051198-e91ba971-0153-4e5e-8f37-2928216eef38.png" width="100%" style="max-width:1200px" alt="関数型プログラミングとImmutabilityの保持" />
 <br>
 <br>
+
+<h2 id="07">関数型プログラミング</h2>
+
+<ul>
+  <li><a href="#07-1">前提</a></li>
+  <li><a href="#07-2">関数型とオブジェクト指向型</a></li>
+  <li><a href="#07-3">手続き（命令）型プログラミングとは？</a></li>
+  <li><a href="#07-4">関数型プログラミングとは？</a></li>
+  <li><a href="#07-5">関数型と手続き型は混在する</a></li>
+  <li><a href="#07-6">関数型プログラミングの重要なキーワード</a></li>
+  <li><a href="#07-7">関数型プログラミングのメリット（目標）</a></li>
+</ul>
+
+<h3 id="07-1">前提</h3>
+
+React は 16.8.0 の React Hooks 導入により、様々な Hooks が使用できるようになった。
+
+それと同じく関数コンポーネントと呼ばれる関数でコンポーネントを定義するようになった。その影響で関数型プログラミングに大きくシフトした。
+
+<img src="https://user-images.githubusercontent.com/39920490/205052254-9e9faeda-048b-412a-8d74-d50b869d77e9.png" width="100%" style="max-width:600px" alt="関数型プログラミングの前提" />
+<br>
+<br>
+
+<h3 id="07-2">関数型とオブジェクト指向型</h3>
+
+現実ではオブジェクト指向型と関数型が混合して書かれることがよくある。
+
+<img src="https://user-images.githubusercontent.com/39920490/205053129-0fd9c27a-5cba-4569-9553-c646835ed3b8.png" width="100%" style="max-width:800px" alt="関数型とオブジェクト指向型" />
+<br>
+<br>
+
+<h3 id="07-3">手続き（命令）型プログラミングとは？</h3>
+
+ブラウザなどへの命令を手順通り（手続き通り）記述していく手法。
+
+↓
+
+コード量が大きくなってくると可読性が悪くなる。
+
+```jsx
+// 制御フロー
+let nums = [1, 2, 3];
+let doubleNums = [];
+for (let i = 0; i < nums.length; i++) {
+  let double = nums[i] * 2;
+  doubleNums.push(double);
+}
+```
+
+<br>
+<br>
+
+<h3 id="07-4">関数型プログラミングとは？</h3>
+
+**手続き型の制御を（なるべく）関数に分離（隠蔽）** し、やりたいことに集中できるようにするプログラミング手法。
+
+```jsx
+let nums = [1, 2, 3];
+let doubleNums = nums.map((num) => num * 2);
+```
+
+ループ制御：map メソッドが担当<br>
+やりたいこと：関数で定義（開発者が担当）
+<br>
+<br>
+
+<h3 id="07-5">関数型と手続き型は混在する</h3>
+
+関数の利用者（関数型プログラミング）
+
+```jsx
+let nums = [1, 2, 3];
+let doubleNums = nums.map((num) => num * 2);
+```
+
+map メソッドはブラウザのビルトインメソッドだが、実際に 0 から記述すると手続き型の書き方になる。
+
+↑
+
+ループ処理は分離（中身は手続き型プログラミング）
+
+```jsx
+for (let i = 0; i < nums.length; i++) {
+  let double = nums[i] * 2;
+  doubleNums.push(double);
+}
+```
+
+<br>
+<br>
+
+<h3 id="07-6">関数型プログラミングの重要なキーワード</h3>
+
+<ul>
+  <li>
+    （値の）状態管理と処理を分岐
+    <ul>
+        <li>状態と処理は切り離す</li>
+    </ul>
+  </li>
+  <li>
+純粋関数（副作用を排除する）
+<ul>
+    <li>特定の入力には特定の出力を返す</li>
+</ul>
+</li>
+  <li>
+不変性（Immutability）
+<ul>
+    <li>一度設定した値は書き換えない</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="07-7">関数型プログラミングのメリット（目標）</h3>
+
+<ul>
+<li>コードの可読性の向上</li>
+<li>拡張性・再利用性の向上</li>
+<li>テスト性の向上</li>
+<li>モジュール化の向上</li>
+<li>Tree Shakingの向上</li>
+</ul>
