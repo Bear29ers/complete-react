@@ -10,6 +10,7 @@
   <li><a href="#07">関数型プログラミング</a></li>
   <li><a href="#08">useContextでstate管理</a></li>
   <li><a href="#09">useEffectの実行タイミング</a></li>
+  <li><a href="#10">カスタムフック</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -698,3 +699,15 @@ state 更新のタイミングで、依存値が更新されたかどうかを�
 <img src="https://user-images.githubusercontent.com/39920490/205432622-36702638-3dd0-4fb3-9f27-9079d8afcdfb.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列省略）" />
 <br>
 <br>
+
+<h2 id="10">カスタムフック</h2>
+
+useStateなどのReact Hooksを内部で使用した関数（フック）のこと。
+
+※ 関数名は**use◯◯**とする。
+
+↓
+
+React Hooksを関数に切り出すことで**再利用**できる。
+
+<img src="https://user-images.githubusercontent.com/39920490/205433130-119e31c8-5f84-4d00-94fe-acb8f1909002.png" width="100%" style="max-width:600px" alt="useEffect（依存配列省略）" />

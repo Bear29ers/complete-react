@@ -1,5 +1,7 @@
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useState } from "react";
+import useTimer from "./useTimer";
 
+// useEffectの実行純を意識した実装。タイマー機能の拡張。
 const Example = () => {
   const [isDisp, setIsDisp] = useState(true);
 
@@ -14,51 +16,7 @@ const Example = () => {
 };
 
 const Timer = () => {
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
-
-  useEffect(() => {
-    // console.log('timer start');
-    let intervalId = null;
-    if (isRunning) {
-      intervalId = window.setInterval(() => {
-        // console.log('interval running');
-        setTime((prev) => prev + 1);
-      }, 1000);
-    }
-    return () => {
-      window.clearInterval(intervalId);
-      // console.log('end');
-    };
-  }, [isRunning]);
-
-  useEffect(() => {
-    // console.log('updated');
-
-    document.title = "counter:" + time;
-    window.localStorage.setItem("time-key", time);
-
-    return () => {
-      // debugger
-      // console.log('updated end');
-    };
-  }, [time]);
-
-  useLayoutEffect(() => {
-    const _time = parseInt(window.localStorage.getItem("time-key"));
-    if (!isNaN(_time)) {
-      setTime(_time);
-    }
-  }, []);
-
-  const toggle = () => {
-    setIsRunning((prev) => !prev);
-  };
-
-  const reset = () => {
-    setTime(0);
-    setIsRunning(false);
-  };
+  const { toggle, reset, time, isRunning } = useTimer();
 
   return (
     <>
