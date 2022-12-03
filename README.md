@@ -8,6 +8,8 @@
   <li><a href="#05">ReactでDOM操作を行う方法</a></li>
   <li><a href="#06">Immutability（不変性）</a></li>
   <li><a href="#07">関数型プログラミング</a></li>
+  <li><a href="#08">useContextでstate管理</a></li>
+  <li><a href="#09">useEffectの実行タイミング</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -631,3 +633,68 @@ for (let i = 0; i < nums.length; i++) {
 <li>モジュール化の向上</li>
 <li>Tree Shakingの向上</li>
 </ul>
+<br>
+<br>
+
+<h2 id="08">useContextでstate管理</h2>
+
+<ul>
+<li><a href="#08-1">propsバケツリレー</a></li>
+<li><a href="#08-2">コンポーネント間のデータの共有</a></li>
+</ul>
+
+<h3 id="08-1">propsバケツリレー</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/205431686-d6d77b8a-c895-45e4-ad9d-73ab8227d0ea.png" width="100%" style="max-width:300px" alt="propsバケツリレー" />
+
+コンポーネントは親から子へ props を渡す。コンポーネントを跨いだり、兄弟コンポーネントに渡すことはできない。
+<br>
+<br>
+
+<h3 id="08-2">コンポーネント間のデータの共有</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/205431773-0699bc5c-2728-4d2b-8ab9-d423242cf893.png" width="100%" style="max-width:400px" alt="コンポーネント間のデータの共有" />
+
+**props**で**state**と**更新関数**をを間にある全てのコンポーネントでリレーして共有する。
+
+↑ この書き方だと冗長になってしまうため、アプリケーション全体で共有して使用する state に関しては、**useContext**でラップする。
+<br>
+<br>
+
+<h2 id="09">useEffectの実行タイミング</h2>
+
+<ul>
+<li><a href="#09-1">useEffect（依存配列が空のとき）</a></li>
+<li><a href="#09-2">useEffect（依存配列あり、更新あり）</a></li>
+<li><a href="#09-3">useEffect（依存配列省略）</a></li>
+</ul>
+
+<h3 id="09-1">useEffect（依存配列が空のとき）</h3>
+
+コンポーネントの状態
+
+<ul>
+<li>Mounted：コンポーネントが生成されたとき</li>
+<li>Updated：何らかのstateが更新されたとき</li>
+<li>Unmounted：コンポーネントが消滅したとき</li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/39920490/205432053-1f301260-e3fc-485d-8e00-0d91dab56d1d.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列が空のとき）" />
+<br>
+<br>
+
+<h3 id="09-2">useEffect（依存配列あり、更新あり）</h3>
+
+state 更新のタイミングで、依存値が更新されたかどうかを判断し、更新されていれば`cleanUp()`、`callback()`の処理が実行される。
+
+<img src="https://user-images.githubusercontent.com/39920490/205432511-ddddb5e1-62d4-40e8-8051-8c6a5c9ad9f7.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列あり、更新あり）" />
+<br>
+<br>
+
+<h3 id="09-3">useEffect（依存配列省略）</h3>
+
+依存値が設定されていないので、再レンダリングが実行される度に`cleanUp()`と`callback()`が呼ばれる。
+
+<img src="https://user-images.githubusercontent.com/39920490/205432622-36702638-3dd0-4fb3-9f27-9079d8afcdfb.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列省略）" />
+<br>
+<br>
