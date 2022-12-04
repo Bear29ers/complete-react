@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const Example = () => {
-  const [state, setState] = useState(0);
+  /*const [state, setState] = useState(0);
 
   useEffect(
     function update() {
@@ -31,7 +31,7 @@ const Example = () => {
       <button onClick={() => setState((prev) => prev + 1)}>更新</button>
       <h3>他のレクチャーを選ぶとunmountが呼ばれます。</h3>
     </>
-  );
+  );*/
 };
 
 export default Example;
