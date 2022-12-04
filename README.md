@@ -11,6 +11,7 @@
   <li><a href="#08">useContextでstate管理</a></li>
   <li><a href="#09">useEffectの実行タイミング</a></li>
   <li><a href="#10">カスタムフック</a></li>
+  <li><a href="#11">useEffectと副作用</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -702,12 +703,54 @@ state 更新のタイミングで、依存値が更新されたかどうかを�
 
 <h2 id="10">カスタムフック</h2>
 
-useStateなどのReact Hooksを内部で使用した関数（フック）のこと。
+useState などの React Hooks を内部で使用した関数（フック）のこと。
 
 ※ 関数名は**use◯◯**とする。
 
 ↓
 
-React Hooksを関数に切り出すことで**再利用**できる。
+React Hooks を関数に切り出すことで**再利用**できる。
 
 <img src="https://user-images.githubusercontent.com/39920490/205433130-119e31c8-5f84-4d00-94fe-acb8f1909002.png" width="100%" style="max-width:600px" alt="useEffect（依存配列省略）" />
+<br>
+<br>
+
+<h2 id="11">useEffectと副作用</h2>
+
+<ul>
+<li><a href="#11-1">純粋関数と副作用（Side Effect）</a></li>
+<li><a href="#11-2">Reactにおける副作用（Side Effect）</a></li>
+</ul>
+
+<h3 id="11-1">純粋関数と副作用（Side Effect）</h3>
+
+純粋関数
+
+<ul>
+<li>関数の出力（戻り値）が、提供される入力値（引数）のみに依存する。</li>
+<li>外部スコープの状態（データ）は参照・変更しない。</li>
+<li>引数で渡された値を変更しない。</li>
+<li>関数外に影響を及ぼさない。</li>
+</ul>
+
+→ 上記の要件を満たさない操作は**副作用**と呼ばれる。
+<br>
+<br>
+
+<h3 id="11-2">Reactにおける副作用（Side Effect）</h3>
+
+コンポーネントは JSX を構築する場所。JSX の構築に"直接"関係のない処理は全て**副作用**として扱われる。
+
+副作用の例
+
+<ul>
+<li>コンソールへのログ出力</li>
+<li>DOM操作</li>
+<li>サーバーとの通信</li>
+<li>タイマー処理</li>
+<li>ランダムな値の生成</li>
+</ul>
+
+↓
+
+useEffect or イベントハンドラ内に記述
