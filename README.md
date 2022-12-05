@@ -12,6 +12,7 @@
   <li><a href="#09">useEffectの実行タイミング</a></li>
   <li><a href="#10">カスタムフック</a></li>
   <li><a href="#11">useEffectと副作用</a></li>
+  <li><a href="#12">Redux</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -754,3 +755,75 @@ React Hooks を関数に切り出すことで**再利用**できる。
 ↓
 
 useEffect or イベントハンドラ内に記述
+<br>
+<br>
+
+<h2 id="12">Redux</h2>
+
+<ul>
+<li><a href="#12-1">Reduxとは</a></li>
+<li><a href="#12-2">Redux Toolkit（RTK）</a></li>
+<li><a href="#12-3">ステート（状態管理）</a></li>
+<li><a href="#12-4">ContextとuseContext</a></li>
+<li><a href="#12-5">Reduxによる状態管理</a></li>
+</ul>
+
+<h3 id="12-1">Reduxとは</h3>
+
+React とは別の状態管理のライブラリ
+
+↓
+
+React 以外のライブラリとも組み合わせて使用可能（React で使用する場合は`react-redux`というライブラリが必要）
+
+<img src="" width="100%" style="max-width:400px" alt="Reduxとは" />
+<br>
+<br>
+
+<h3 id="12-2">Redux Toolkit（RTK）</h3>
+
+素の Redux は他のライブラリが必要なケースが多い。
+
+↓
+
+公式が推奨する設定や書き方をまとめたもの。
+
+様々な便利なライブラリが同梱されている。
+
+Redux Toolkit（RTK）
+
+<ul>
+<li>Redux</li>
+<li>Immer</li>
+<li>redux-thunk</li>
+<li>createSlice...</li>
+</ul>
+
+<br>
+<br>
+
+<h3 id="12-3">ステート（状態管理）</h3>
+
+**グローバルステート**<br>
+アプリ全体で共有されるステート
+
+例）`useContext`、`Redux`
+
+**ローカルステート**<br>
+特定のコンポーネント内でのみ使用されるステート
+
+<img src="" width="100%" style="max-width:300px" alt="ステート（状態管理）" />
+<br>
+<br>
+
+<h3 id="12-4">ContextとuseContext</h3>
+
+<img src="" width="100%" style="max-width:1200px" alt="ContextとuseContext" />
+<br>
+<br>
+
+<h3 id="12-5">Reduxによる状態管理</h3>
+
+Redux を使用する場合でもルートコンポーネントは Provider で囲う必要がある。
+
+<img src="" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
