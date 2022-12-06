@@ -827,3 +827,5 @@ Redux Toolkit（RTK）
 Redux を使用する場合でもルートコンポーネントは Provider で囲う必要がある。
 
 <img src="" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
+<br>
+<br>
