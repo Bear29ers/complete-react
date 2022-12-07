@@ -776,7 +776,7 @@ React とは別の状態管理のライブラリ
 
 React 以外のライブラリとも組み合わせて使用可能（React で使用する場合は`react-redux`というライブラリが必要）
 
-<img src="" width="100%" style="max-width:400px" alt="Reduxとは" />
+<img src="https://user-images.githubusercontent.com/39920490/206192961-338b2fc0-f93c-49dc-90e5-4c415fb67a55.png" width="100%" style="max-width:300px" alt="Reduxとは" />
 <br>
 <br>
 
@@ -812,13 +812,13 @@ Redux Toolkit（RTK）
 **ローカルステート**<br>
 特定のコンポーネント内でのみ使用されるステート
 
-<img src="" width="100%" style="max-width:300px" alt="ステート（状態管理）" />
+<img src="https://user-images.githubusercontent.com/39920490/206193893-a1cbf333-9dda-4990-b6b9-f5032134986b.png" width="100%" style="max-width:350px" alt="ステート（状態管理）" />
 <br>
 <br>
 
 <h3 id="12-4">ContextとuseContext</h3>
 
-<img src="" width="100%" style="max-width:1200px" alt="ContextとuseContext" />
+<img src="https://user-images.githubusercontent.com/39920490/206194005-7a7d2150-3bc3-4ce9-9cbe-b8f8aee0d2e7.png" width="100%" style="max-width:1200px" alt="ContextとuseContext" />
 <br>
 <br>
 
@@ -826,6 +826,6 @@ Redux Toolkit（RTK）
 
 Redux を使用する場合でもルートコンポーネントは Provider で囲う必要がある。
 
-<img src="" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
+<img src="https://user-images.githubusercontent.com/39920490/206194072-f8e8a595-de1a-4905-b87b-955fe30e13c4.png" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
 <br>
 <br>
