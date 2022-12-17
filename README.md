@@ -766,6 +766,9 @@ useEffect or イベントハンドラ内に記述
 <li><a href="#12-3">ステート（状態管理）</a></li>
 <li><a href="#12-4">ContextとuseContext</a></li>
 <li><a href="#12-5">Reduxによる状態管理</a></li>
+<li><a href="#12-6">Reduxのデータフロー</a></li>
+<li><a href="#12-7">ReduxのReducerには副作用は書かない</a></li>
+<li><a href="#12-8">Redux Thunkとミドルウェア</a></li>
 </ul>
 
 <h3 id="12-1">Reduxとは</h3>
@@ -829,3 +832,34 @@ Redux を使用する場合でもルートコンポーネントは Provider で�
 <img src="https://user-images.githubusercontent.com/39920490/206194072-f8e8a595-de1a-4905-b87b-955fe30e13c4.png" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
 <br>
 <br>
+
+<h3 id="12-6">Reduxのデータフロー</h3>
+
+<img src="https://d33wubrfki0l68.cloudfront.net/01cc198232551a7e180f4e9e327b5ab22d9d14e7/b33f4/assets/images/reduxdataflowdiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" width="100%" style="max-width:1000px" alt="Reduxのデータフロー" />
+<br>
+<br>
+
+<h3 id="12-7">ReduxのReducerには副作用は書かない</h3>
+
+Reducer は純粋関数として定義する。<br>
+副作用が発生する操作は Reducer には書かない。
+
+副作用の例
+
+<ul>
+<li>コンソールへのログ出力</li>
+<li>DOM操作</li>
+<li>サーバーとの通信</li>
+<li>タイマー処理</li>
+<li>ランダムな値の生成</li>
+</ul>
+
+↓
+
+ミドルウェア（middleware）に記載
+<br>
+<br>
+
+<h3 id="12-8">Redux Thunkとミドルウェア</h3>
+
+<img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" width="100%" style="max-width:1000px" src="Redux Thunkとミドルウェア" />
