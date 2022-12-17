@@ -34,13 +34,13 @@
 React による JavaScript の構文を拡張したもの。<br>
 JSX は JavaScript のオブジェクトに変換される。
 
-<img src="https://user-images.githubusercontent.com/39920490/199717046-deafe89b-0074-463a-8a12-369d096508df.png" width="100%" style="max-width:1200px" alt="JSX" />
+<img src="https://user-images.githubusercontent.com/39920490/199717046-deafe89b-0074-463a-8a12-369d096508df.png" width="1200px" alt="JSX" />
 <br>
 <br>
 
 <h3 id="01-2">JSX がオブジェクトに変換される過程</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/201510527-b502d88b-b2bb-4a4d-a36e-524db6066c08.png" width="100%" style="max-width:1200px" alt="JSXがオブジェクトに変換される過程" />
+<img src="https://user-images.githubusercontent.com/39920490/201510527-b502d88b-b2bb-4a4d-a36e-524db6066c08.png" width="1200px" alt="JSXがオブジェクトに変換される過程" />
 <br>
 <br>
 
@@ -48,7 +48,7 @@ JSX は JavaScript のオブジェクトに変換される。
 
 ReactDOM が仮想 DOM を元に DOM を更新する。
 
-<img src="https://user-images.githubusercontent.com/39920490/201510529-7f9d2dce-a280-41ac-bd69-e7ffac93dce0.png" width="100%" style="max-width: 1200px" alt="React要素のレンダー" />
+<img src="https://user-images.githubusercontent.com/39920490/201510529-7f9d2dce-a280-41ac-bd69-e7ffac93dce0.png" width="1200px" alt="React要素のレンダー" />
 <br>
 <br>
 
@@ -56,7 +56,7 @@ ReactDOM が仮想 DOM を元に DOM を更新する。
 
 コンポーネントは JavaScript の関数として定義する。
 
-<img src="https://user-images.githubusercontent.com/39920490/201510530-6b044bf4-c1a1-4b64-83b9-999f3e3eb3b7.png" width="100%" style="max-width:1200px" alt="コンポーネントの定義" />
+<img src="https://user-images.githubusercontent.com/39920490/201510530-6b044bf4-c1a1-4b64-83b9-999f3e3eb3b7.png" width="1200px" alt="コンポーネントの定義" />
 
 関数で定義されるコンポーネントは**関数コンポーネント**と呼ばれる。
 <br>
@@ -78,7 +78,7 @@ ReactDOM が仮想 DOM を元に DOM を更新する。
 
 コンポーネントは出力する JSX の中に他のコンポーネントを含めることができる。
 
-<img src="https://user-images.githubusercontent.com/39920490/201510533-fe7df4f7-419c-4132-8935-eb9959890256.png" width="100%" style="max-width:1200px" alt="コンポーネントの親子関係" />
+<img src="https://user-images.githubusercontent.com/39920490/201510533-fe7df4f7-419c-4132-8935-eb9959890256.png" width="1200px" alt="コンポーネントの親子関係" />
 <br>
 <br>
 
@@ -87,7 +87,7 @@ ReactDOM が仮想 DOM を元に DOM を更新する。
 コンポーネントは props を親から子に渡すことでデータを受け渡す。<br>
 props を通して JavaScript のあらゆる値を渡すことができる。
 
-<img src="https://user-images.githubusercontent.com/39920490/201510534-b9c32263-44e4-4c6d-a45e-2c405b7f0ef1.png" width="100%" style="max-width:450px" alt="コンポーネント間のデータのやりとり" />
+<img src="https://user-images.githubusercontent.com/39920490/201510534-b9c32263-44e4-4c6d-a45e-2c405b7f0ef1.png" width="450px" alt="コンポーネント間のデータのやりとり" />
 
 **props の流れは一方通行**<br>
 props を子から親に渡すことはできない。
@@ -99,13 +99,13 @@ props を子から親に渡すことはできない。
 
 <h3 id="01-8">React 要素とコンポーネント</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/201510535-f49449a5-18db-4e57-b201-b8cdc2dceb21.png" width="100%" style="max-width:1200px" alt="React要素とコンポーネント" />
+<img src="https://user-images.githubusercontent.com/39920490/201510535-f49449a5-18db-4e57-b201-b8cdc2dceb21.png" width="1200px" alt="React要素とコンポーネント" />
 <br>
 <br>
 
 <h3 id="01-9">コンポーネントツリー</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/201510537-2710c654-e06d-49de-b35f-9496cec6163f.png" width="100%" style="max-width:1200px" alt="コンポーネントツリー" />
+<img src="https://user-images.githubusercontent.com/39920490/201510537-2710c654-e06d-49de-b35f-9496cec6163f.png" width="1200px" alt="コンポーネントツリー" />
 <br>
 <br>
 
@@ -130,7 +130,7 @@ props を子から親に渡すことはできない。
 
 これらを可能にする仕組みを提供するのが**useState**関数
 
-<img src="https://user-images.githubusercontent.com/39920490/202904267-8b6acb2c-da5b-46c0-b62f-f760c4b1e2b5.png" width="100%" style="max-width:500px" alt="画面が変更されるために必要な処理" />
+<img src="https://user-images.githubusercontent.com/39920490/202904267-8b6acb2c-da5b-46c0-b62f-f760c4b1e2b5.png" width="500px" alt="画面が変更されるために必要な処理" />
 <br>
 <br>
 
@@ -143,7 +143,7 @@ React 内部と接続。状態が管理されるようになる。
 
 ③ 更新関数で**新しい値を React に渡す**。また、React に自身のコンポーネントを再実行するように依頼する。
 
-<img src="https://user-images.githubusercontent.com/39920490/202904294-e5d1e51a-c793-45c8-8ca0-f8641ce9e563.png" width="100%" style="max-width:500px" alt="useStateの役割と使い方" />
+<img src="https://user-images.githubusercontent.com/39920490/202904294-e5d1e51a-c793-45c8-8ca0-f8641ce9e563.png" width="500px" alt="useStateの役割と使い方" />
 
 React 内部に保持されたコンポーネントに紐づく値を**state**と呼ぶ。
 <br>
@@ -167,7 +167,7 @@ React 内部に保持されたコンポーネントに紐づく値を**state**�
 
 <h3 id="02-4">state 更新用関数とレンダリング</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/202904319-31e57d20-eb90-495a-b277-a2848abb3562.png" width="100%" style="max-width:1200px" alt="state更新用関数とレンダリング" />
+<img src="https://user-images.githubusercontent.com/39920490/202904319-31e57d20-eb90-495a-b277-a2848abb3562.png" width="1200px" alt="state更新用関数とレンダリング" />
 <br>
 <br>
 
@@ -179,7 +179,7 @@ React 内部に保持されたコンポーネントに紐づく値を**state**�
 
 **React 要素のツリー内の位置**によっってどのコンポーネントの state か識別している。
 
-<img src="https://user-images.githubusercontent.com/39920490/202904344-7f51d3bc-871c-45dd-bd74-83fc7a66acc0.png" width="100%" style="max-width:500px" alt="stateはコンポーネント毎に状態（値）を保持している" />
+<img src="https://user-images.githubusercontent.com/39920490/202904344-7f51d3bc-871c-45dd-bd74-83fc7a66acc0.png" width="500px" alt="stateはコンポーネント毎に状態（値）を保持している" />
 <br>
 <br>
 
@@ -187,7 +187,7 @@ React 内部に保持されたコンポーネントに紐づく値を**state**�
 
 コンポーネントの**React 要素ツリーにおける位置**が変わらない場合は state は保持される
 
-<img src="https://user-images.githubusercontent.com/39920490/202904374-396d1696-cf2b-428d-bf96-9f03d593dbee.png" width="100%" style="max-width:700px" alt="React要素のツリー構造が変わらない場合" />
+<img src="https://user-images.githubusercontent.com/39920490/202904374-396d1696-cf2b-428d-bf96-9f03d593dbee.png" width="700px" alt="React要素のツリー構造が変わらない場合" />
 <br>
 <br>
 
@@ -195,7 +195,7 @@ React 内部に保持されたコンポーネントに紐づく値を**state**�
 
 key を付けることによって同じ位置の同じコンポーネントでも別物と認識させることができる。
 
-<img src="https://user-images.githubusercontent.com/39920490/202904392-8e16920c-9eba-4ea1-a4e1-49bcd428228d.png" width="100%" style="max-width:700px" alt="同じ位置に独立してコンポーネントを表示" />
+<img src="https://user-images.githubusercontent.com/39920490/202904392-8e16920c-9eba-4ea1-a4e1-49bcd428228d.png" width="700px" alt="同じ位置に独立してコンポーネントを表示" />
 <br>
 <br>
 
@@ -211,7 +211,7 @@ key を付けることによって同じ位置の同じコンポーネントで�
 
 React は React 要素ツリー（厳密には Fiber ツリー）の差分検出処理をして DOM を更新している
 
-<img src="https://user-images.githubusercontent.com/39920490/202904624-77af870f-cc12-4161-a57f-e1d3f4d655cc.png" width="100%" style="max-width:1200px" alt="前提知識" />
+<img src="https://user-images.githubusercontent.com/39920490/202904624-77af870f-cc12-4161-a57f-e1d3f4d655cc.png" width="1200px" alt="前提知識" />
 <br>
 <br>
 
