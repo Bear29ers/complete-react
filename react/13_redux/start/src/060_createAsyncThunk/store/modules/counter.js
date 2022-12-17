@@ -1,11 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { asyncCount } from "../../api/counter"
+import { asyncCount } from "../../api/counter";
 
 const counter = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: {
-    count: 0
+    count: 0,
+    status: "",
   },
   reducers: {
     add(state, { type, payload }) {
@@ -19,11 +20,36 @@ const counter = createSlice({
       // const newState = { ...state };
       // newState.count = state.count - payload
       // return newState;
-    }
-  }
+    },
+  },
+  extraReducers: (builder) => {
+    // ステータスの状態によって画面に表示させる文言を変える（状態の監視）
+    builder
+      .addCase(addAsyncWithStatus.pending, (state) => {
+        state.status = "Loading...";
+      })
+      .addCase(addAsyncWithStatus.fulfilled, (state, action) => {
+        state.status = "取得済み";
+        // createAsyncThunkの戻り値がactionとして渡される
+        state.count = state.count + action.payload;
+      })
+      .addCase(addAsyncWithStatus.rejected, (state) => {
+        state.status = "エラー";
+      });
+  },
 });
 
 const { add, minus } = counter.actions;
+
+const addAsyncWithStatus = createAsyncThunk(
+  // typeの設定（一意の文字列）
+  "counter/asyncCount",
+  // 第二引数で非同期処理を記述する
+  async (payload) => {
+    const response = await asyncCount(payload);
+    return response.data;
+  }
+);
 
 const addAsync = (payload) => {
   return async (dispatch, getState) => {
@@ -31,9 +57,8 @@ const addAsync = (payload) => {
     console.log(state);
     const response = await asyncCount(payload);
     dispatch(add(response.data));
-  }
-}
+  };
+};
 
-
-export { add, minus, addAsync }
-export default counter.reducer
+export { add, minus, addAsync, addAsyncWithStatus };
+export default counter.reducer;

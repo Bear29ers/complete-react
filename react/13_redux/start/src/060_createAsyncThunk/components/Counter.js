@@ -1,16 +1,23 @@
-import { add, minus,addAsync } from "../store/modules/counter"
+import { add, minus, addAsyncWithStatus } from "../store/modules/counter";
 
-import CounterResult from "./CounterResult"
-import CounterButton from "./CounterButton"
+import CounterResult from "./CounterResult";
+import CounterButton from "./CounterButton";
+import { useSelector } from "react-redux";
 
 const Counter = () => {
-    return (
-        <>
-            <CounterResult />
-            <CounterButton step={2} calcType="+" actionCreator={add}/>
-            <CounterButton step={2} calcType="-" actionCreator={minus}/>
-            <CounterButton step={2} calcType="非同期(+)" actionCreator={addAsync}/>
-        </>
-    )
-}
+  const status = useSelector((state) => state.counter.status);
+  return (
+    <>
+      <CounterResult />
+      <CounterButton step={2} calcType="+" actionCreator={add} />
+      <CounterButton step={2} calcType="-" actionCreator={minus} />
+      <CounterButton
+        step={2}
+        calcType="非同期(+)"
+        actionCreator={addAsyncWithStatus}
+      />
+      <h3>{status}</h3>
+    </>
+  );
+};
 export default Counter;
