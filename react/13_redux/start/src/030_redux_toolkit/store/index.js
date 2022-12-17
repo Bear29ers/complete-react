@@ -1,9 +1,9 @@
-import { createStore, combineReducers } from "redux";
-import { reducer } from "./modules/counter"
+import { configureStore } from "@reduxjs/toolkit";
+import reducer from "./modules/counter";
 
-
-const reducers = combineReducers({
-  counter: reducer,
+// configureStoreの場合はあらかじめ複数のreducerが登録される設計になっている
+export default configureStore({
+  reducer: {
+    counter: reducer,
+  },
 });
-
-export default createStore(reducers);

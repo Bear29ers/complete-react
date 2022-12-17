@@ -12,6 +12,7 @@
   <li><a href="#09">useEffectの実行タイミング</a></li>
   <li><a href="#10">カスタムフック</a></li>
   <li><a href="#11">useEffectと副作用</a></li>
+  <li><a href="#12">Redux</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -754,3 +755,111 @@ React Hooks を関数に切り出すことで**再利用**できる。
 ↓
 
 useEffect or イベントハンドラ内に記述
+<br>
+<br>
+
+<h2 id="12">Redux</h2>
+
+<ul>
+<li><a href="#12-1">Reduxとは</a></li>
+<li><a href="#12-2">Redux Toolkit（RTK）</a></li>
+<li><a href="#12-3">ステート（状態管理）</a></li>
+<li><a href="#12-4">ContextとuseContext</a></li>
+<li><a href="#12-5">Reduxによる状態管理</a></li>
+<li><a href="#12-6">Reduxのデータフロー</a></li>
+<li><a href="#12-7">ReduxのReducerには副作用は書かない</a></li>
+<li><a href="#12-8">Redux Thunkとミドルウェア</a></li>
+</ul>
+
+<h3 id="12-1">Reduxとは</h3>
+
+React とは別の状態管理のライブラリ
+
+↓
+
+React 以外のライブラリとも組み合わせて使用可能（React で使用する場合は`react-redux`というライブラリが必要）
+
+<img src="https://user-images.githubusercontent.com/39920490/206192961-338b2fc0-f93c-49dc-90e5-4c415fb67a55.png" width="100%" style="max-width:300px" alt="Reduxとは" />
+<br>
+<br>
+
+<h3 id="12-2">Redux Toolkit（RTK）</h3>
+
+素の Redux は他のライブラリが必要なケースが多い。
+
+↓
+
+公式が推奨する設定や書き方をまとめたもの。
+
+様々な便利なライブラリが同梱されている。
+
+Redux Toolkit（RTK）
+
+<ul>
+<li>Redux</li>
+<li>Immer</li>
+<li>redux-thunk</li>
+<li>createSlice...</li>
+</ul>
+
+<br>
+<br>
+
+<h3 id="12-3">ステート（状態管理）</h3>
+
+**グローバルステート**<br>
+アプリ全体で共有されるステート
+
+例）`useContext`、`Redux`
+
+**ローカルステート**<br>
+特定のコンポーネント内でのみ使用されるステート
+
+<img src="https://user-images.githubusercontent.com/39920490/206193893-a1cbf333-9dda-4990-b6b9-f5032134986b.png" width="100%" style="max-width:350px" alt="ステート（状態管理）" />
+<br>
+<br>
+
+<h3 id="12-4">ContextとuseContext</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/206194005-7a7d2150-3bc3-4ce9-9cbe-b8f8aee0d2e7.png" width="100%" style="max-width:1200px" alt="ContextとuseContext" />
+<br>
+<br>
+
+<h3 id="12-5">Reduxによる状態管理</h3>
+
+Redux を使用する場合でもルートコンポーネントは Provider で囲う必要がある。
+
+<img src="https://user-images.githubusercontent.com/39920490/206194072-f8e8a595-de1a-4905-b87b-955fe30e13c4.png" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
+<br>
+<br>
+
+<h3 id="12-6">Reduxのデータフロー</h3>
+
+<img src="https://d33wubrfki0l68.cloudfront.net/01cc198232551a7e180f4e9e327b5ab22d9d14e7/b33f4/assets/images/reduxdataflowdiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" width="100%" style="max-width:1000px" alt="Reduxのデータフロー" />
+<br>
+<br>
+
+<h3 id="12-7">ReduxのReducerには副作用は書かない</h3>
+
+Reducer は純粋関数として定義する。<br>
+副作用が発生する操作は Reducer には書かない。
+
+副作用の例
+
+<ul>
+<li>コンソールへのログ出力</li>
+<li>DOM操作</li>
+<li>サーバーとの通信</li>
+<li>タイマー処理</li>
+<li>ランダムな値の生成</li>
+</ul>
+
+↓
+
+ミドルウェア（middleware）に記載
+<br>
+<br>
+
+<h3 id="12-8">Redux Thunkとミドルウェア</h3>
+
+<img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" width="100%" style="max-width:1000px" src="Redux Thunkとミドルウェア" />

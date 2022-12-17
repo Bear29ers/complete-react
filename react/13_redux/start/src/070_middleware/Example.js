@@ -1,6 +1,6 @@
 import Counter from "./components/Counter";
 import { Provider } from "react-redux";
-import store from "./store"
+import store from "./store";
 
 // Redux Middleware
 const reduxMiddleware = (store) => {
@@ -12,8 +12,8 @@ const reduxMiddleware = (store) => {
       next(action);
       // storeはaction後の状態
     };
-  }
-}
+  };
+};
 const Example = () => {
   return (
     <Provider store={store}>
