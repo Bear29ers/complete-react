@@ -219,13 +219,13 @@ React は React 要素ツリー（厳密には Fiber ツリー）の差分検出
 
 差分検出は子の React 要素に対して先頭から順に比較し、差分処理を行う
 
-<img src="https://user-images.githubusercontent.com/39920490/202904796-087d5ebd-50a4-4c5a-b9a7-b5dfa784f7f9.png" width="100%" style="max-width:1200px" alt="最後に要素を挿入した場合" />
+<img src="https://user-images.githubusercontent.com/39920490/202904796-087d5ebd-50a4-4c5a-b9a7-b5dfa784f7f9.png" width="1200px" alt="最後に要素を挿入した場合" />
 <br>
 <br>
 
 先頭に要素を挿入した場合（key なし）
 
-<img src="https://user-images.githubusercontent.com/39920490/202905083-3bb1cac8-a66b-40c0-a3b6-fbcd68183951.png" width="100%" style="max-width:1200px" alt="最後に要素を挿入した場合" />
+<img src="https://user-images.githubusercontent.com/39920490/202905083-3bb1cac8-a66b-40c0-a3b6-fbcd68183951.png" width="1200px" alt="最後に要素を挿入した場合" />
 
 React は全ての子の React 要素を変更してしまい、全ての Real DOM を洗替える（子要素を全て削除して、新しい子要素を追加する）。
 <br>
@@ -233,7 +233,7 @@ React は全ての子の React 要素を変更してしまい、全ての Real D
 
 先頭に要素を挿入した場合（key あり）
 
-<img src="https://user-images.githubusercontent.com/39920490/202905160-f0b61830-fca2-4331-be74-3f49326c3844.png" width="100%" style="max-width:1200px" alt="最後に要素を挿入した場合" />
+<img src="https://user-images.githubusercontent.com/39920490/202905160-f0b61830-fca2-4331-be74-3f49326c3844.png" width="1200px" alt="最後に要素を挿入した場合" />
 
 子要素に key を持たせると、React はどの要素が変更、追加、削除されたかを識別できるようになるため、差分のみ更新することが可能になる。
 <br>
@@ -348,7 +348,7 @@ CSS を JS ファイル内に記載して、CSS を適用したコンポーネ�
 
 ポータルの子要素を、直接の親要素ではなく別の DOM 要素にマウントすることができる。
 
-<img src="https://user-images.githubusercontent.com/39920490/204136253-5a0b0143-ccd2-4aca-a4cb-80d45da878a2.png" width="100%" style="max-width: 1000px" alt="ポータル" />
+<img src="https://user-images.githubusercontent.com/39920490/204136253-5a0b0143-ccd2-4aca-a4cb-80d45da878a2.png" width="1000px" alt="ポータル" />
 <br>
 <br>
 
@@ -369,7 +369,7 @@ const ref = useRef(initialValue);
   </li>
 </ul>
 
-<img src="https://user-images.githubusercontent.com/39920490/204136515-fa9a06f2-499c-4a68-814c-33aeee0ea4d7.png" width="100%" style="max-width:300px" alt="useRefとは" />
+<img src="https://user-images.githubusercontent.com/39920490/204136515-fa9a06f2-499c-4a68-814c-33aeee0ea4d7.png" width="300px" alt="useRefとは" />
 <br>
 <br>
 
@@ -428,7 +428,7 @@ React のデフォルトでは、コンポーネントが他のコンポーネ�
 
 アクセスされる側のコンポーネントがそれを許すかどうかを決めることができる（`forwardRef`）
 
-<img src="https://user-images.githubusercontent.com/39920490/204544878-c55c6848-7a91-4c44-a862-6c34eea6ee5c.png" width="100%" style="max-width:500px" alt="他のコンポーネントのDOMの操作" />
+<img src="https://user-images.githubusercontent.com/39920490/204544878-c55c6848-7a91-4c44-a862-6c34eea6ee5c.png" width="500px" alt="他のコンポーネントのDOMの操作" />
 <br>
 <br>
 
@@ -446,7 +446,7 @@ React のデフォルトでは、コンポーネントが他のコンポーネ�
 
 `forwardRef`と共に使用する。親から受け取った ref オブジェクトをカスタマイズすることができる。
 
-<img src="https://user-images.githubusercontent.com/39920490/204547960-c8105ee3-210e-4ec0-877b-79802513f3a2.png" width="100%" style="max-width:200px" alt="useRefとは" />
+<img src="https://user-images.githubusercontent.com/39920490/204547960-c8105ee3-210e-4ec0-877b-79802513f3a2.png" width="200px" alt="useRefとは" />
 
 子コンポーネント内で`useImperativeHandle`に渡したメソッドが、親の ref に登録され、`ref.current."メソッド名"`で実行できるようになる。
 <br>
@@ -480,7 +480,7 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 
 <h3 id="06-2">イミュータブル（immutable）な値の変更</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/204672978-8e6c963d-a743-4d18-964f-21cb929b3d61.png" width="100%" style="max-width:800px" alt="イミュータブル（immutable）な値の変更" />
+<img src="https://user-images.githubusercontent.com/39920490/204672978-8e6c963d-a743-4d18-964f-21cb929b3d61.png" width="800px" alt="イミュータブル（immutable）な値の変更" />
 
 例えば数値のようなイミュータブルな値を変更すると、値自体が変更されるのではなく、新しい別の値に参照が向けられるようになる。
 <br>
@@ -490,7 +490,7 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 
 変数の参照先が変わらないため、配列の中身が変わっていることになる（オブジェクトも同様）。
 
-<img src="https://user-images.githubusercontent.com/39920490/205046510-b2bfcc95-f5b3-44fc-987e-b787c094dd98.png" width="100%" style="max-width:1000px" alt="ミュータブル（mutable）な値の変更" />
+<img src="https://user-images.githubusercontent.com/39920490/205046510-b2bfcc95-f5b3-44fc-987e-b787c094dd98.png" width="1000px" lt="ミュータブル（mutable）な値の変更" />
 <br>
 <br>
 
@@ -498,7 +498,7 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 
 コピーをすることで変数の参照先を変え、mutable な配列やオブジェクトを immutable のように扱う。
 
-<img src="https://user-images.githubusercontent.com/39920490/205050746-7f59a8de-0824-464c-941b-8d8b11ae1f23.png" width="100%" style="max-width:1000px" alt="Immutabilityの保持" />
+<img src="https://user-images.githubusercontent.com/39920490/205050746-7f59a8de-0824-464c-941b-8d8b11ae1f23.png" width="1000px" alt="Immutabilityの保持" />
 <br>
 <br>
 
@@ -508,7 +508,7 @@ mutable なオブジェクトを immutable として取り扱う。
 
 関数内で使用する場合は必ずオブジェクトをコピーして使用する。
 
-<img src="https://user-images.githubusercontent.com/39920490/205051198-e91ba971-0153-4e5e-8f37-2928216eef38.png" width="100%" style="max-width:1200px" alt="関数型プログラミングとImmutabilityの保持" />
+<img src="https://user-images.githubusercontent.com/39920490/205051198-e91ba971-0153-4e5e-8f37-2928216eef38.png" width="1200px" alt="関数型プログラミングとImmutabilityの保持" />
 <br>
 <br>
 
@@ -530,7 +530,7 @@ React は 16.8.0 の React Hooks 導入により、様々な Hooks が使用で�
 
 それと同じく関数コンポーネントと呼ばれる関数でコンポーネントを定義するようになった。その影響で関数型プログラミングに大きくシフトした。
 
-<img src="https://user-images.githubusercontent.com/39920490/205052254-9e9faeda-048b-412a-8d74-d50b869d77e9.png" width="100%" style="max-width:600px" alt="関数型プログラミングの前提" />
+<img src="https://user-images.githubusercontent.com/39920490/205052254-9e9faeda-048b-412a-8d74-d50b869d77e9.png" width="600px" alt="関数型プログラミングの前提" />
 <br>
 <br>
 
@@ -538,7 +538,7 @@ React は 16.8.0 の React Hooks 導入により、様々な Hooks が使用で�
 
 現実ではオブジェクト指向型と関数型が混合して書かれることがよくある。
 
-<img src="https://user-images.githubusercontent.com/39920490/205053129-0fd9c27a-5cba-4569-9553-c646835ed3b8.png" width="100%" style="max-width:800px" alt="関数型とオブジェクト指向型" />
+<img src="https://user-images.githubusercontent.com/39920490/205053129-0fd9c27a-5cba-4569-9553-c646835ed3b8.png" width="800px" alt="関数型とオブジェクト指向型" />
 <br>
 <br>
 
@@ -682,7 +682,7 @@ for (let i = 0; i < nums.length; i++) {
 <li>Unmounted：コンポーネントが消滅したとき</li>
 </ul>
 
-<img src="https://user-images.githubusercontent.com/39920490/205432053-1f301260-e3fc-485d-8e00-0d91dab56d1d.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列が空のとき）" />
+<img src="https://user-images.githubusercontent.com/39920490/205432053-1f301260-e3fc-485d-8e00-0d91dab56d1d.png" width="1200px" alt="useEffect（依存配列が空のとき）" />
 <br>
 <br>
 
@@ -690,7 +690,7 @@ for (let i = 0; i < nums.length; i++) {
 
 state 更新のタイミングで、依存値が更新されたかどうかを判断し、更新されていれば`cleanUp()`、`callback()`の処理が実行される。
 
-<img src="https://user-images.githubusercontent.com/39920490/205432511-ddddb5e1-62d4-40e8-8051-8c6a5c9ad9f7.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列あり、更新あり）" />
+<img src="https://user-images.githubusercontent.com/39920490/205432511-ddddb5e1-62d4-40e8-8051-8c6a5c9ad9f7.png" width="1200px" alt="useEffect（依存配列あり、更新あり）" />
 <br>
 <br>
 
@@ -698,7 +698,7 @@ state 更新のタイミングで、依存値が更新されたかどうかを�
 
 依存値が設定されていないので、再レンダリングが実行される度に`cleanUp()`と`callback()`が呼ばれる。
 
-<img src="https://user-images.githubusercontent.com/39920490/205432622-36702638-3dd0-4fb3-9f27-9079d8afcdfb.png" width="100%" style="max-width:1200px" alt="useEffect（依存配列省略）" />
+<img src="https://user-images.githubusercontent.com/39920490/205432622-36702638-3dd0-4fb3-9f27-9079d8afcdfb.png" width="1200px" alt="useEffect（依存配列省略）" />
 <br>
 <br>
 
@@ -712,7 +712,7 @@ useState などの React Hooks を内部で使用した関数（フック）の�
 
 React Hooks を関数に切り出すことで**再利用**できる。
 
-<img src="https://user-images.githubusercontent.com/39920490/205433130-119e31c8-5f84-4d00-94fe-acb8f1909002.png" width="100%" style="max-width:600px" alt="useEffect（依存配列省略）" />
+<img src="https://user-images.githubusercontent.com/39920490/205433130-119e31c8-5f84-4d00-94fe-acb8f1909002.png" width="600px" alt="useEffect（依存配列省略）" />
 <br>
 <br>
 
@@ -779,7 +779,7 @@ React とは別の状態管理のライブラリ
 
 React 以外のライブラリとも組み合わせて使用可能（React で使用する場合は`react-redux`というライブラリが必要）
 
-<img src="https://user-images.githubusercontent.com/39920490/206192961-338b2fc0-f93c-49dc-90e5-4c415fb67a55.png" width="100%" style="max-width:300px" alt="Reduxとは" />
+<img src="https://user-images.githubusercontent.com/39920490/206192961-338b2fc0-f93c-49dc-90e5-4c415fb67a55.png" width="300px" alt="Reduxとは" />
 <br>
 <br>
 
@@ -815,13 +815,13 @@ Redux Toolkit（RTK）
 **ローカルステート**<br>
 特定のコンポーネント内でのみ使用されるステート
 
-<img src="https://user-images.githubusercontent.com/39920490/206193893-a1cbf333-9dda-4990-b6b9-f5032134986b.png" width="100%" style="max-width:350px" alt="ステート（状態管理）" />
+<img src="https://user-images.githubusercontent.com/39920490/206193893-a1cbf333-9dda-4990-b6b9-f5032134986b.png" width="350px" alt="ステート（状態管理）" />
 <br>
 <br>
 
 <h3 id="12-4">ContextとuseContext</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/206194005-7a7d2150-3bc3-4ce9-9cbe-b8f8aee0d2e7.png" width="100%" style="max-width:1200px" alt="ContextとuseContext" />
+<img src="https://user-images.githubusercontent.com/39920490/206194005-7a7d2150-3bc3-4ce9-9cbe-b8f8aee0d2e7.png" width="1200px" alt="ContextとuseContext" />
 <br>
 <br>
 
@@ -829,13 +829,13 @@ Redux Toolkit（RTK）
 
 Redux を使用する場合でもルートコンポーネントは Provider で囲う必要がある。
 
-<img src="https://user-images.githubusercontent.com/39920490/206194072-f8e8a595-de1a-4905-b87b-955fe30e13c4.png" width="100%" style="max-width:1200px" alt="Reduxによる状態管理" />
+<img src="https://user-images.githubusercontent.com/39920490/206194072-f8e8a595-de1a-4905-b87b-955fe30e13c4.png" width="1200px" alt="Reduxによる状態管理" />
 <br>
 <br>
 
 <h3 id="12-6">Reduxのデータフロー</h3>
 
-<img src="https://d33wubrfki0l68.cloudfront.net/01cc198232551a7e180f4e9e327b5ab22d9d14e7/b33f4/assets/images/reduxdataflowdiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" width="100%" style="max-width:1000px" alt="Reduxのデータフロー" />
+<img src="https://d33wubrfki0l68.cloudfront.net/01cc198232551a7e180f4e9e327b5ab22d9d14e7/b33f4/assets/images/reduxdataflowdiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" width="1200px" alt="Reduxのデータフロー" />
 <br>
 <br>
 
@@ -862,4 +862,4 @@ Reducer は純粋関数として定義する。<br>
 
 <h3 id="12-8">Redux Thunkとミドルウェア</h3>
 
-<img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" width="100%" style="max-width:1000px" src="Redux Thunkとミドルウェア" />
+<img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" width="1000px" src="Redux Thunkとミドルウェア" />
