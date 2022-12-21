@@ -876,6 +876,9 @@ Reducer は純粋関数として定義する。<br>
 <li><a href="#13-4">なぜクラスコンポーネントを学ぶのか？</a></li>
 <li><a href="#13-5">クラスコンポーネントの問題点</a></li>
 <li><a href="#13-6">クラスコンポーネントの問題点まとめ</a></li>
+<li><a href="#13-7">クラスコンポーネントのライフサイクルとは？</a></li>
+<li><a href="#13-8">主なライフサイクルメソッド</a></li>
+<li><a href="#13-9">ライフサイクルメソッドとuseEffectの比較</a></li>
 </ul>
 
 <h3 id="13-1">Reactのコンポーネント</h3>
@@ -978,3 +981,42 @@ JavaScript の Class 構文の`this`や`bind`などの独特な構文を理解�
 ↓
 
 これらの問題を解決するため、Hooks が導入された。
+<br>
+<br>
+
+<h3 id="13-7">コンポーネントのライスサイクルとは？</h3>
+
+コンポーネントの一生には 3 つの段階がある。
+
+<ol>
+<li>Mounting</li>
+<li>Updating</li>
+<li>Unmounting</li>
+</ol>
+
+それぞれの段階で特別なメソッドが用意されており、特定のタイミングで実行させることができる。
+<br>
+<br>
+
+<h3 id="13-8">主なライフサイクルメソッド</h3>
+
+**Mounting**<br>
+`componentDidMount()`: 1 回目の`render()`が呼ばれ、DOM がレンダーされた後に 1 度だけ実行される。
+
+**Updating**<br>
+`componentDidUpdate()`: state が更新された直後に実行される。
+
+**Unmounting**<br>
+`componentWillUnmount()`: コンポーネントが破棄される直前に実行される。
+
+[Class コンポーネントのライフサイクル](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+<br>
+<br>
+
+<h3 id="13-9">ライフサイクルメソッドとuseEffectの比較</h3>
+
+| クラスコンポーネント     | 関数コンポーネント                           |
+| ------------------------ | -------------------------------------------- |
+| `componentDidMount()`    | `useEffect(..., [])`                         |
+| `componentDidUpdate()`   | `useEffect(..., [val])`                      |
+| `componentWillUnmount()` | `useEffect(() => { return () => {...}}, [])` |
