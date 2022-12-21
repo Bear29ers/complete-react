@@ -6,12 +6,17 @@ class ErrorBoundary extends Component {
     this.state = { error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(error){
+  // どちらかのメソッドを記述すればError Boundaryとして使用できる
+  /* static getDerivedStateFromError(error) {
     // 副作用の記述NG
-  }
-  
+  } */
+
   componentDidCatch(error, errorInfo) {
     // 副作用の記述OK
+    this.setState({
+      error: error,
+      errorInfo: errorInfo,
+    });
   }
 
   render() {
@@ -28,6 +33,7 @@ class ErrorBoundary extends Component {
       );
     }
 
+    // エラーがなければそのままchildrenが表示される
     return this.props.children;
   }
 }
