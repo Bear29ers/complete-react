@@ -13,6 +13,7 @@
   <li><a href="#10">カスタムフック</a></li>
   <li><a href="#11">useEffectと副作用</a></li>
   <li><a href="#12">Redux</a></li>
+  <li><a href="#13">クラスコンポーネント</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -490,7 +491,7 @@ _イミュータブルな値以外。オブジェクト（Object、Array など�
 
 変数の参照先が変わらないため、配列の中身が変わっていることになる（オブジェクトも同様）。
 
-<img src="https://user-images.githubusercontent.com/39920490/205046510-b2bfcc95-f5b3-44fc-987e-b787c094dd98.png" width="1000px" lt="ミュータブル（mutable）な値の変更" />
+<img src="https://user-images.githubusercontent.com/39920490/205046510-b2bfcc95-f5b3-44fc-987e-b787c094dd98.png" width="1000px" alt="ミュータブル（mutable）な値の変更" />
 <br>
 <br>
 
@@ -648,7 +649,7 @@ for (let i = 0; i < nums.length; i++) {
 
 <h3 id="08-1">propsバケツリレー</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/205431686-d6d77b8a-c895-45e4-ad9d-73ab8227d0ea.png" width="100%" style="max-width:300px" alt="propsバケツリレー" />
+<img src="https://user-images.githubusercontent.com/39920490/205431686-d6d77b8a-c895-45e4-ad9d-73ab8227d0ea.png" width="300px" alt="propsバケツリレー" />
 
 コンポーネントは親から子へ props を渡す。コンポーネントを跨いだり、兄弟コンポーネントに渡すことはできない。
 <br>
@@ -656,7 +657,7 @@ for (let i = 0; i < nums.length; i++) {
 
 <h3 id="08-2">コンポーネント間のデータの共有</h3>
 
-<img src="https://user-images.githubusercontent.com/39920490/205431773-0699bc5c-2728-4d2b-8ab9-d423242cf893.png" width="100%" style="max-width:400px" alt="コンポーネント間のデータの共有" />
+<img src="https://user-images.githubusercontent.com/39920490/205431773-0699bc5c-2728-4d2b-8ab9-d423242cf893.png" width="400px" alt="コンポーネント間のデータの共有" />
 
 **props**で**state**と**更新関数**をを間にある全てのコンポーネントでリレーして共有する。
 
@@ -862,4 +863,118 @@ Reducer は純粋関数として定義する。<br>
 
 <h3 id="12-8">Redux Thunkとミドルウェア</h3>
 
-<img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" width="1000px" src="Redux Thunkとミドルウェア" />
+<img src="https://redux.js.org/assets/images/ReduxAsyncDataFlowDiagram-d97ff38a0f4da0f327163170ccc13e80.gif" width="1000px" alt="Redux Thunkとミドルウェア" />
+<br>
+<br>
+
+<h2 id="13">クラスコンポーネント</h2>
+
+<ul>
+<li><a href="#13-1">Reactのコンポーネント</a></li>
+<li><a href="#13-2">コンポーネントの定義方法の変化</a></li>
+<li><a href="#13-3">Hooksの登場"前"のReact</a></li>
+<li><a href="#13-4">なぜクラスコンポーネントを学ぶのか？</a></li>
+<li><a href="#13-5">クラスコンポーネントの問題点</a></li>
+<li><a href="#13-6">クラスコンポーネントの問題点まとめ</a></li>
+</ul>
+
+<h3 id="13-1">Reactのコンポーネント</h3>
+
+コンポーネントの定義方法は大きく分けて 2 つある。
+
+<ul>
+<li>関数コンポーネント
+<ul>
+<li>JSの関数として定義。ここまで登場したものは全て関数コンポーネント</li>
+</ul>
+</li>
+<li>クラスコンポーネント
+<ul>
+<li>JS(ES6)のクラスとして定義するコンポーネント</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="13-2">コンポーネントの定義方法の変化</h3>
+
+React16.8 より追加された Hooks という新機能（2019 年）の登場によってコンポーネントの定義方法が大きく変わった。
+
+`登場前` クラスコンポーネントがメイン
+
+↓
+
+`登場後` 関数コンポーネント + Hooks（公式に推奨されている）
+<br>
+<br>
+
+<h3 id="13-3">Hooksの登場"前"のReact</h3>
+
+<ul>
+<li>状態の管理やライフサイクルを利用するにはクラスコンポーネントを使用する必要があった。</li>
+<li>関数コンポーネントは存在したが、stateを管理できず、データを受け取って表示するだけなどの単純なコンポーネントにしか使えなかった。</li>
+</ul>
+
+↓
+
+**Hooks 登場前はクラスコンポーネントがメイン**
+<br>
+<br>
+
+<h3 id="13-4">なぜクラスコンポーネントを学ぶのか？</h3>
+
+<ul>
+<li>クラスコンポーネントが多用されている過去のプロジェクトに参加している、将来する可能性がある</li>
+<li>既存のシステムの改修に携わる可能性がある</li>
+<li>クラスコンポーネントにしか対応していないライブラリを使用したい</li>
+<li>Reactの理解を深めたい</li>
+</ul>
+<br>
+<br>
+
+<h3 id="13-5">クラスコンポーネントの問題点</h3>
+
+`問題点1`<br>
+<ins>共通のステートフルなロジックの再利用が難しい</ins>
+
+高階コンポーネントやレンダープロップという設計パターンで、共通のロジックを分離して、ビュー（見た目）を担当するコンポーネントと合成することで関心を分離する。
+
+↓
+
+分離のたびにコンポーネントの再構成が必要であり、面倒な上にコードが追いにくくなる。
+<br>
+
+`問題点2`<br>
+<ins>ステートの管理が複雑なコンポーネントは保守性が低い</ins>
+
+コンポーネントが複雑になると、ステートフルなロジックや副作用に関するロジックがコンポーネント内のいたる場所に存在してしまい、分散してしまう。
+
+↓
+
+コンポーネントが複雑化し、分割も困難になる。<br>
+無理に分割しようとすると、問題点 1 が発生する。
+<br>
+
+`問題点3`<br>
+<ins>JS の Class 構文は混乱を招き、関数に比べて可読性も低い。</ins>
+
+JavaScript の Class 構文の`this`や`bind`などの独特な構文を理解してい意識する必要がある。
+
+↓
+
+コードの可読性が下がり、冗長になる。
+<br>
+<br>
+
+<h3 id="13-6">クラスコンポーネントの問題点まとめ</h3>
+
+<ol>
+<li>ステートフルな共通のロジックの再利用が難しい</li>
+<li>ステートの管理が複雑になると保守性が下がる</li>
+<li>そもそもJSのクラスが混乱を招きやすく可読性が低い</li>
+</ol>
+
+↓
+
+これらの問題を解決するため、Hooks が導入された。
