@@ -1,6 +1,6 @@
+/* ラジオボタンの実装 */
 import { useState } from "react";
 
-// ラジオボタンの実装
 const Example = () => {
   const [fruit, setFruit] = useState("Apple");
   const onChange = (e) => setFruit(e.target.value);

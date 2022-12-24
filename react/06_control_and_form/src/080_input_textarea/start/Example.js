@@ -1,6 +1,6 @@
+/* input要素、textarea要素の使い方 */
 import { useState } from "react";
 
-// input要素、textarea要素の使い方
 const Example = () => {
   const [val, setVal] = useState("");
   const clearVal = () => setVal("");

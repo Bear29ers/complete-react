@@ -1,4 +1,4 @@
-// useLayoutEffectとは？ useEffectとの違い
+/* useLayoutEffectとは？ useEffectとの違い */
 import { useEffect, useLayoutEffect, useState } from "react";
 import Random from "./Random";
 

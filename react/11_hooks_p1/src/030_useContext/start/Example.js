@@ -1,4 +1,4 @@
-// useContextの基礎
+/* useContextの基礎 */
 import { createContext } from "react";
 import Child from "./components/Child";
 

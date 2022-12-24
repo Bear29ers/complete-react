@@ -1,4 +1,4 @@
-// JSXはあくまでJSオブジェクト
+/* JSXはあくまでJSオブジェクト */
 import React from "react";
 
 const Example = () => {

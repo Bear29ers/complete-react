@@ -1,4 +1,4 @@
-// useEffectの基礎
+/* useEffectの基礎 */
 import { useEffect, useState } from "react";
 
 const Example = () => {

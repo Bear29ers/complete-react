@@ -1,6 +1,6 @@
+/* debuggerの使い方 */
 import { useState } from "react";
 
-// debuggerの使い方
 const Child = ({ count }) => {
   // debugger
   return <p>現在のカウント数: {count.val}</p>;

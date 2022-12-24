@@ -1,6 +1,6 @@
+/* stateとコンポーネントの関係 */
 import { useState } from "react";
 
-// stateとコンポーネントの関係
 const Example = () => {
   const [toggle, setToggle] = useState(true);
   const toggleComponent = () => {

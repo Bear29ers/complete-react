@@ -1,3 +1,4 @@
+/* StrictModeによる挙動の変化 */
 import { StrictMode, useState } from "react";
 import "./Example.css";
 

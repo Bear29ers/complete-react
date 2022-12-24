@@ -1,3 +1,4 @@
+/* クラスコンポーネントにおける状態管理 */
 import { Component } from "react";
 
 class SwitchButton extends Component {

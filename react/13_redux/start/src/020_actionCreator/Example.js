@@ -1,3 +1,4 @@
+/* Action CreatorとActionの関係 */
 import Counter from "./components/Counter";
 import { Provider } from "react-redux";
 import store from "./store"

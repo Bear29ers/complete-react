@@ -1,4 +1,4 @@
-// useEffectの実行タイミング
+/* useEffectの実行タイミング */
 import { useEffect, useState } from "react";
 
 const Example = () => {

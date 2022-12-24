@@ -1,3 +1,4 @@
+/* ErrorBoundaryの使い方 */
 import { Component } from "react";
 import BuggyCounter from "./component/BuggyCounter";
 import ErrorBoundary from "./component/ErrorBoundary";

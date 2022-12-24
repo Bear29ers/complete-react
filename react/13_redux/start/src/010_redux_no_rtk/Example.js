@@ -1,4 +1,4 @@
-// 素のReduxでグローバルな状態管理を記述する
+/* 素のReduxでグローバルな状態管理を記述する */
 import Counter from "./components/Counter";
 import { CounterProvider } from "./context/CounterContext";
 import { Provider } from "react-redux";

@@ -1,6 +1,6 @@
+/* 複数チェックボックスの実装 */
 import { useState } from "react";
 
-// 複数チェックボックスの実装
 const Example = () => {
   const [fruits, setFruits] = useState([
     { label: "Apple", value: 100, checked: false },

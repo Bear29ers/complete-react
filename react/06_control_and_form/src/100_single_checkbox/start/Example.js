@@ -1,6 +1,6 @@
+/* チェックボックスの実装 */
 import { useState } from "react";
 
-// チェックボックスの実装
 const Example = () => {
   const [isChecked, setIsChecked] = useState(true);
 

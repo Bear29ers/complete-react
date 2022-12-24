@@ -1,4 +1,4 @@
-// Contextとレンダリングの関係
+/* Contextとレンダリングの関係 */
 import "./Example.css";
 import Main from "./components/Main";
 import Header from "./components/Header";

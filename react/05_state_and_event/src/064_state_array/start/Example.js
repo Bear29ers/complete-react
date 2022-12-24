@@ -1,6 +1,6 @@
+/* 配列のstateの扱い方 */
 import { useState } from "react";
 
-// 配列のstateの扱い方
 const Example = () => {
   const numArray = [1, 2, 3, 4, 5];
   const [nums, setNums] = useState(numArray);

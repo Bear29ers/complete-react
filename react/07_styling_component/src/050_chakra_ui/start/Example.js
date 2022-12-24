@@ -1,4 +1,4 @@
-// Chakra UIのインポート
+/* Chakra UIのインポート */
 import { ChakraProvider } from "@chakra-ui/react";
 import Todo from "./components/Todo";
 

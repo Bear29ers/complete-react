@@ -1,3 +1,4 @@
+/* React vs JS Todo App */
 const todosList = [
   {
     id: 1,

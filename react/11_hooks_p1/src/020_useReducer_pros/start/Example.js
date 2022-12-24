@@ -1,3 +1,4 @@
+/* useReducerとuseStateの違い */
 import { useReducer, useState } from "react";
 
 // useState:状態の更新の仕方は利用側に託す。

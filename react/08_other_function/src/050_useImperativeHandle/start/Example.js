@@ -1,6 +1,6 @@
+/* 親からのrefへの参照を制限 */
 import { useRef, forwardRef, useImperativeHandle } from "react";
 
-// 親からのrefへの参照を制限
 const Input = forwardRef((props, ref) => {
   const inputRef = useRef();
 

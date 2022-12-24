@@ -1,4 +1,4 @@
-// Reactと純粋関数
+/* Reactと純粋関数 */
 let value = 0;
 
 const Child = () => {
