@@ -15,6 +15,7 @@
   <li><a href="#12">Redux</a></li>
   <li><a href="#13">クラスコンポーネント</a></li>
   <li><a href="#14">レンダリングの最適化</a></li>
+  <li><a href="#15">パフォーマンスの最適化</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1100,5 +1101,57 @@ state の変更によってコンポーネントが**再実行**されること�
 再レンダリングの結果、React が React 要素の差分のみを DOM に反映する
 
 <img src="https://user-images.githubusercontent.com/39920490/209142141-08290f09-2a92-4fe7-ba01-4b09cf8acb77.png" width="1000px" alt="コミット">
+<br>
+<br>
+
+<h2 id="15">パフォーマンスの最適化</h2>
+
+<ul>
+<li><a href="15-1">再レンダリングを防ぐための関数</a></li>
+<li><a href="15-2">React.memo</a></li>
+<li><a href="15-3">関数がpropsに渡る場合</a></li>
+<li><a href="15-4">useCallback</a></li>
+<li><a href="15-5">useMemo</a></li>
+</ul>
+
+<h3 id="15-1">再レンダリングを防ぐための関数</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/209558307-bde16eea-bc71-492c-8d5b-173dc17c4bb2.png" width="550px" alt="再レンダリングを防ぐための関数">
+<br>
+<br>
+
+<h3 id="15-2">React.memo</h3>
+
+受け取った props の値が同じであれば再レンダリングをスキップ
+
+<img src="https://user-images.githubusercontent.com/39920490/209558313-ef2391cc-b75b-4dcf-aabf-4e26169a5b2b.png" width="1200px" alt="React.memo">
+<br>
+<br>
+
+<h3 id="15-3">関数がpropsに渡る場合</h3>
+
+コンポーネント内で定義した**関数**は再レンダリングのたびに再生成される。
+
+<img src="https://user-images.githubusercontent.com/39920490/209558311-46913459-4300-4a6d-bf42-2072511ee6c3.png" width="1000px" alt="関数がpropsに渡る場合">
+<br>
+<br>
+
+<h3 id="15-4">useCallback</h3>
+
+コンポーネント内で定義した**"関数"**をメモして再利用し、レンダリングの度に生成されることを防ぐ
+
+↓
+
+子コンポーネントに関数を渡している場合に、**不要な再レンダリングを防ぐ**ことができる。
+<br>
+<br>
+
+<h3 id="15-5">useMemo</h3>
+
+コンポーネントだけでなく値をメモすることが可能。コストの高い処理などをメモ化する。
+
+↓
+
+useMemo 自体の実行にもコストがかかるため、思い処理にのみ使用すること。
 <br>
 <br>
