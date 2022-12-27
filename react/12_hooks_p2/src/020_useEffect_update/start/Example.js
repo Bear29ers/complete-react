@@ -1,4 +1,4 @@
-// useEffectの依存配列
+/* useEffectの依存配列 */
 import { useEffect, useState } from "react";
 
 const Example = () => {

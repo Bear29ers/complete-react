@@ -1,4 +1,4 @@
-// 三項演算子（ ? : ）
+/* 三項演算子（ ? : ） */
 
 const a = true;
 let resultA;

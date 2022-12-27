@@ -1,6 +1,6 @@
+/* stateとレンダリングの仕組み */
 import { useState } from "react";
 
-// stateとレンダリングの仕組み
 const Example = () => {
   // let displayVal;
   let [val, setVal] = useState();

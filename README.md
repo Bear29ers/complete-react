@@ -14,6 +14,8 @@
   <li><a href="#11">useEffectと副作用</a></li>
   <li><a href="#12">Redux</a></li>
   <li><a href="#13">クラスコンポーネント</a></li>
+  <li><a href="#14">レンダリングの最適化</a></li>
+  <li><a href="#15">パフォーマンスの最適化</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1020,3 +1022,136 @@ JavaScript の Class 構文の`this`や`bind`などの独特な構文を理解�
 | `componentDidMount()`    | `useEffect(..., [])`                         |
 | `componentDidUpdate()`   | `useEffect(..., [val])`                      |
 | `componentWillUnmount()` | `useEffect(() => { return () => {...}}, [])` |
+
+<br>
+<br>
+
+<h2 id="14">レンダリングの最適化</h2>
+
+<ul>
+<li><a href="#14-1">Reactが画面を更新する流れ</a></li>
+<li><a href="#14-2">レンダリングがトリガーされるタイミング</a></li>
+<li><a href="#14-3">stateの比較</a></li>
+<li><a href="#14-4">レンダリング</a></li>
+<li><a href="#14-5">コミット</a></li>
+</ul>
+
+<h3 id="14-1">Reactが画面を更新する流れ</h3>
+
+**トリガー**: 何らかの契機にレンダリングを予約すること
+
+↓
+
+**レンダリング**: コンポーネントを実行すること
+
+↓
+
+**コミット**: DOM への更新を行うこと
+<br>
+<br>
+
+<h3 id="14-2">レンダリングがトリガーされるタイミング</h3>
+
+1. 初回レンダリング<br>
+   ルートコンポーネントを HTML(DOM)にマウントしたとき
+
+`<div id="app"></div>` ← `root.render(<App />);`
+
+2. "state"の値が更新されたとき<br>
+   コンポーネントの state の値が変更されたとき<br>
+   ※ 基本的には state の前後の値に差が生じた際にレンダリングがスケジュールされる
+   <br>
+   <br>
+
+<h3 id="14-3">stateの比較</h3>
+
+"更新用関数で渡された値"と"保持している値"を比較
+
+<img src="https://user-images.githubusercontent.com/39920490/209142132-e3197b8f-9804-4591-b11a-aca9b537c6ac.png" width="1000px" alt="stateの比較">
+<br>
+<br>
+
+値が異なることをもう少し具体的にすると、`Object.is(①, ②)`の結果が同じかどうかになる。
+
+#### state の変更前後で値が同じ時も再レンダリングが発生することはある
+
+> 現在値と同じ値で更新を行った場合、React は子のレンダーや副作用の事項を回避して処理を終了します
+>
+> 更新の回避が起きる前に React により該当のコンポーネント自体はレンダーされるかもしれない、ということに注意してください。
+> ツリーのそれ以上「深く」にまで処理は及ばないためこれは問題ではないはずです。もしレンダー中にコストの高い計算を行っている場合は useMemo を使った最適化が可能です。
+
+[React 公式（state 更新の回避）](https://ja.reactjs.org/docs/hooks-reference.html#bailing-out-of-a-state-update)
+<br>
+<br>
+
+<h3 id="14-4">レンダリング</h3>
+
+React が（関数）コンポーネントを実行すること
+
+↓
+
+state の変更によってコンポーネントが**再実行**されることを**再レンダリング**と呼ぶ。
+
+<img src="https://user-images.githubusercontent.com/39920490/209142138-c74c0b69-70af-456a-ae60-4791df02f043.png" width="300px" alt="レンダリング">
+<br>
+<br>
+
+<h3 id="14-5">コミット</h3>
+
+再レンダリングの結果、React が React 要素の差分のみを DOM に反映する
+
+<img src="https://user-images.githubusercontent.com/39920490/209142141-08290f09-2a92-4fe7-ba01-4b09cf8acb77.png" width="1000px" alt="コミット">
+<br>
+<br>
+
+<h2 id="15">パフォーマンスの最適化</h2>
+
+<ul>
+<li><a href="15-1">再レンダリングを防ぐための関数</a></li>
+<li><a href="15-2">React.memo</a></li>
+<li><a href="15-3">関数がpropsに渡る場合</a></li>
+<li><a href="15-4">useCallback</a></li>
+<li><a href="15-5">useMemo</a></li>
+</ul>
+
+<h3 id="15-1">再レンダリングを防ぐための関数</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/209558307-bde16eea-bc71-492c-8d5b-173dc17c4bb2.png" width="550px" alt="再レンダリングを防ぐための関数">
+<br>
+<br>
+
+<h3 id="15-2">React.memo</h3>
+
+受け取った props の値が同じであれば再レンダリングをスキップ
+
+<img src="https://user-images.githubusercontent.com/39920490/209558313-ef2391cc-b75b-4dcf-aabf-4e26169a5b2b.png" width="1200px" alt="React.memo">
+<br>
+<br>
+
+<h3 id="15-3">関数がpropsに渡る場合</h3>
+
+コンポーネント内で定義した**関数**は再レンダリングのたびに再生成される。
+
+<img src="https://user-images.githubusercontent.com/39920490/209558311-46913459-4300-4a6d-bf42-2072511ee6c3.png" width="1000px" alt="関数がpropsに渡る場合">
+<br>
+<br>
+
+<h3 id="15-4">useCallback</h3>
+
+コンポーネント内で定義した**"関数"**をメモして再利用し、レンダリングの度に生成されることを防ぐ
+
+↓
+
+子コンポーネントに関数を渡している場合に、**不要な再レンダリングを防ぐ**ことができる。
+<br>
+<br>
+
+<h3 id="15-5">useMemo</h3>
+
+コンポーネントだけでなく値をメモすることが可能。コストの高い処理などをメモ化する。
+
+↓
+
+useMemo 自体の実行にもコストがかかるため、思い処理にのみ使用すること。
+<br>
+<br>

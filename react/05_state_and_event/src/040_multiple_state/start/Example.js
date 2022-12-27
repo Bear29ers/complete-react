@@ -1,6 +1,6 @@
+/* 複数のstateの管理と使用上の注意 */
 import { useState } from "react";
 
-// 複数のstateの管理と使用上の注意
 const Example = () => {
   /* stateはトップレベル（if文などで囲まない）で呼ぶ
   複数のstateを取り扱う場合はそれぞれ名前を変更可能

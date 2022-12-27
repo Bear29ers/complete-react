@@ -1,3 +1,4 @@
+/* カスタムフックを利用した実装 */
 import { useEffect, useState, useLayoutEffect } from "react";
 
 const Example = () => {

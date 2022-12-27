@@ -1,4 +1,4 @@
-// 非同期処理（Promise）
+/* 非同期処理（Promise） */
 let a = 0;
 
 new Promise((resolve, reject) => {

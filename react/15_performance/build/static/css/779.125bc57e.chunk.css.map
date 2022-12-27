@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/779.125bc57e.chunk.css","mappings":"AAAA,EACI,eACJ,CACA,QACI,uBAAwB,CACxB,YACJ","sources":["012_strictmode/start/Example.css"],"sourcesContent":["p {\n    font-size: 1.2em;\n}\n.parent {\n    background-color: orange;\n    padding: 10px;\n}\n"],"names":[],"sourceRoot":""}

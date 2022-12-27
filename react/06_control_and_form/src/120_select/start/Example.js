@@ -1,6 +1,6 @@
+/* プルダウンの実装 */
 import { useState } from "react";
 
-// プルダウンの実装
 const Example = () => {
   const [selected, setSelected] = useState("Banana");
   const OPTIONS = ["Apple", "Banana", "Cherry"];

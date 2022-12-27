@@ -1,6 +1,6 @@
+/* ReactでのImmutability */
 import { useState } from "react";
 
-// ReactでのImmutability
 // 引数で渡された値を変更しない（★ Immutability）
 const Child = ({ state, setState }) => {
   // setState({ value: 1 });

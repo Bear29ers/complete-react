@@ -1,3 +1,4 @@
+/* Redux Toolkitの使い方 */
 import Counter from "./components/Counter";
 import { Provider } from "react-redux";
 import store from "./store";

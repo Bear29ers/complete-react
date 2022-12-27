@@ -1,4 +1,4 @@
-// useEffectの練習
+/* useEffectの練習 */
 import { useEffect, useState } from "react";
 
 const Example = () => {

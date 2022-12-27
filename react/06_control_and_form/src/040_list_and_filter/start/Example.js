@@ -1,8 +1,8 @@
+/* filterメソッドの使い方 */
 import { useState } from "react";
 
 const animals = ["Dog", "Cat", "Rat"];
 
-// filterメソッドの使い方
 const Example = () => {
   const [filterVal, setFilterVal] = useState("");
 

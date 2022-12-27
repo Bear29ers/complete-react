@@ -1,7 +1,7 @@
+/* useContext x useReducer */
 import Counter from "./components/Counter";
 import { CounterProvider } from "./context/CounterContext";
 
-// useContext x useReducer
 const Example = () => {
   return (
     <>

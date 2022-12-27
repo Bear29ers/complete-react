@@ -1,7 +1,7 @@
+/* useEffectの実行純を意識した実装。タイマー機能の拡張。 */
 import { useState } from "react";
 import useTimer from "./useTimer";
 
-// useEffectの実行純を意識した実装。タイマー機能の拡張。
 const Example = () => {
   const [isDisp, setIsDisp] = useState(true);
 

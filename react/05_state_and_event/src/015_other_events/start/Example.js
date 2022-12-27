@@ -1,6 +1,6 @@
+/* イベントリスナーの登録方法 */
 import "./Example.css";
 
-// イベントリスナーの登録方法
 const Example = () => {
   return (
     <div>

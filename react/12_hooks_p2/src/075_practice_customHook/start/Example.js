@@ -1,3 +1,4 @@
+/* カスタムフックの練習 */
 import { useCount } from "./hooks";
 
 const Example = () => {
