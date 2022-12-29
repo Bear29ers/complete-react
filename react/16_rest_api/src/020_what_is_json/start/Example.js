@@ -1,3 +1,4 @@
+/* JSONとは */
 const Example = () => {
   const usersData = [
     {
