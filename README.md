@@ -16,6 +16,7 @@
   <li><a href="#13">クラスコンポーネント</a></li>
   <li><a href="#14">レンダリングの最適化</a></li>
   <li><a href="#15">パフォーマンスの最適化</a></li>
+  <li><a href="#16">Rest APIを使ったサーバーとの通信</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1153,5 +1154,55 @@ state の変更によってコンポーネントが**再実行**されること�
 ↓
 
 useMemo 自体の実行にもコストがかかるため、思い処理にのみ使用すること。
+<br>
+<br>
+
+<h2 id="16">Rest APIを使ったサーバーとの通信</h2>
+
+<ul>
+<li><a id="16-1">サーバーとブラウザの関係</a></li>
+<li><a id="16-2">Rest APIとは？</a></li>
+<li><a id="16-3">通常のリクエスト</a></li>
+<li><a id="16-4">Rest API</a></li>
+</ul>
+
+<h3 id="16-1">サーバーとブラウザの関係</h3>
+
+<img src="https://user-images.githubusercontent.com/39920490/209960746-0190daa8-4696-4a44-b87f-18c9f90d4607.png" width="1000px" alt="サーバーとブラウザの関係">
+<br>
+<br>
+
+<h3 id="16-2">Rest APIとは？</h3>
+
+以下の特徴を持つ、サーバーへのリクエスト方式のこと
+
+<ul>
+<li>リソースごとにURLを定義</li>
+<li>
+メソッドでリソースに対する処理を定義
+<ul>
+<li>メソッドの例）POST、GET、DELETE、PUTなど</li>
+</ul>
+</li>
+<li>JSONでデータをやりとりする</li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/39920490/209961080-43b234c9-dac1-4480-b470-67cd9571824a.png" width="400px" alt="Rest API">
+<br>
+<br>
+
+<h3 id="16-3">通常のリクエスト</h3>
+
+処理ごとに URL のパスを設ける
+
+<img src="https://user-images.githubusercontent.com/39920490/209966430-c96e656e-628c-4a84-9ca0-46a42bd4f45f.png" width="900px" alt="通常のリクエスト">
+<br>
+<br>
+
+<h3 id="16-4">Rest API</h3>
+
+リソースごとに URL のパスを設ける
+
+<img src="https://user-images.githubusercontent.com/39920490/209963050-d1b1633a-ed0d-48b0-98e5-2ba12f064bb4.png" width="900px" alt="通常のリクエスト">
 <br>
 <br>

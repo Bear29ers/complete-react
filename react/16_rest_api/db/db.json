@@ -17,6 +17,11 @@
       "content": "買い物",
       "editing": false,
       "completed": false
+    },
+    {
+      "id": 93299,
+      "content": "勉強",
+      "editing": false
     }
   ],
   "user": [
@@ -42,7 +47,7 @@
     {
       "id": 3,
       "username": "piyo三郎",
-      "age": 50,
+      "age": 55,
       "hobbies": [
         "筋トレ",
         "水泳"
