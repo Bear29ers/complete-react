@@ -17,6 +17,7 @@
   <li><a href="#14">レンダリングの最適化</a></li>
   <li><a href="#15">パフォーマンスの最適化</a></li>
   <li><a href="#16">Rest APIを使ったサーバーとの通信</a></li>
+  <li><a href="#17">Next.js</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1203,6 +1204,118 @@ useMemo 自体の実行にもコストがかかるため、思い処理にのみ
 
 リソースごとに URL のパスを設ける
 
-<img src="https://user-images.githubusercontent.com/39920490/209963050-d1b1633a-ed0d-48b0-98e5-2ba12f064bb4.png" width="900px" alt="通常のリクエスト">
+<img src="https://user-images.githubusercontent.com/39920490/209963050-d1b1633a-ed0d-48b0-98e5-2ba12f064bb4.png" width="900px" alt="Rest API">
 <br>
 <br>
+
+<h2 id="17">Next.js</h2>
+
+<ul>
+<li><a id="17-1">Next.jsとは</a></li>
+<li><a id="17-2">Reactとの違い</a></li>
+<li><a id="17-3">Next.jsのメリット</a></li>
+<li><a id="17-4">Next.jsの主な機能</a></li>
+<li><a id="17-5">プロジェクト構成</a></li>
+<li><a id="17-6">ファイルベースルーティング</a></li>
+<li><a id="17-7">ページ遷移</a></li>
+<li><a id="17-8">その他</a></li>
+</ul>
+
+<h3 id="17-1">Next.jsとは</h3>
+
+React 開発のためのフレームワーク
+
+高速な Web アプリケーションを作成するための様々な機能を提供
+
+<img src="https://user-images.githubusercontent.com/39920490/210026410-eecff3e7-c532-4f23-bc3d-7214ccdaeb92.png" width="600px" alt="Next.jsとは">
+<br>
+<br>
+
+<h3 id="17-2">Reactとの違い</h3>
+
+<ul>
+<li>
+React
+<ul>
+<li>UIを構築するための機能を提供するライブラリ</li>
+</ul>
+</li>
+<li>
+Next.js
+<ul>
+<li>React開発のための機能を提供するフレームワーク</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="17-3">Next.jsのメリット</h3>
+
+ゼロコンフィグで高度な機能を使用可能。
+
+手動で複雑な設定をする必要なく、効率的に開発を進めることができる。
+<br>
+<br>
+
+<h3>Next.jsの主な機能</h3>
+
+<ul>
+<li>複数のレンダリング方法（SSR、SG、ISG）</li>
+<li>ファイルベースルーティング（ダイナミックルート）</li>
+<li>APIの作成（API Routes）</li>
+<li>デベロッパーに優しい開発環境（ゼロコンフィグ）</li>
+</ul>
+<br>
+<br>
+
+<h3 id="17-5">プロジェクト構成</h3>
+
+<ul>
+<li>
+/pages
+<ul><li>ファイルまでのパスがそのままページになる</li></ul>
+</li>
+<li>
+/styles
+<ul><li>グローバルに適用されるスタイルを配置</li></ul>
+</li>
+<li>
+/pages/_app.js
+<ul><li>ページ遷移時に必ず呼ばれる処理を記述</li></ul>
+</li>
+<li>
+next.config.js
+<ul><li>Next.jsの設定を記載</li></ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="17-6">ファイルベースルーティング</h3>
+
+<ul>
+<li>pages配下からexportされたコンポーネントを1ページとしてルーティングする。</li>
+<li>[id]は動的なパスとして認識される。</li>
+<li>getServerSideProps、queryでダイナミックルートを取得する</li>
+</ul>
+<br>
+<br>
+
+<h3 id="17-7">ページ遷移</h3>
+
+・`useRouter`<br>
+ページ遷移を行うための値やメソッドを取得する際に利用
+
+・`<Link href>`<br>
+href に遷移先の URL を設定する
+<br>
+<br>
+
+<h3 id="17-8">その他</h3>
+
+・`<Head>`<br>
+`<head>`タグ内に挿入したいタグを記載する
+
+・`<Script>`<br>
+外部スクリプトを読み込む際に使用
