@@ -1215,6 +1215,10 @@ useMemo 自体の実行にもコストがかかるため、思い処理にのみ
 <li><a id="17-2">Reactとの違い</a></li>
 <li><a id="17-3">Next.jsのメリット</a></li>
 <li><a id="17-4">Next.jsの主な機能</a></li>
+<li><a id="17-5">プロジェクト構成</a></li>
+<li><a id="17-6">ファイルベースルーティング</a></li>
+<li><a id="17-7">ページ遷移</a></li>
+<li><a id="17-8">その他</a></li>
 </ul>
 
 <h3 id="17-1">Next.jsとは</h3>
@@ -1264,3 +1268,54 @@ Next.js
 </ul>
 <br>
 <br>
+
+<h3 id="17-5">プロジェクト構成</h3>
+
+<ul>
+<li>
+/pages
+<ul><li>ファイルまでのパスがそのままページになる</li></ul>
+</li>
+<li>
+/styles
+<ul><li>グローバルに適用されるスタイルを配置</li></ul>
+</li>
+<li>
+/pages/_app.js
+<ul><li>ページ遷移時に必ず呼ばれる処理を記述</li></ul>
+</li>
+<li>
+next.config.js
+<ul><li>Next.jsの設定を記載</li></ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="17-6">ファイルベースルーティング</h3>
+
+<ul>
+<li>pages配下からexportされたコンポーネントを1ページとしてルーティングする。</li>
+<li>[id]は動的なパスとして認識される。</li>
+<li>getServerSideProps、queryでダイナミックルートを取得する</li>
+</ul>
+<br>
+<br>
+
+<h3 id="17-7">ページ遷移</h3>
+
+・`useRouter`<br>
+ページ遷移を行うための値やメソッドを取得する際に利用
+
+・`<Link href>`<br>
+href に遷移先の URL を設定する
+<br>
+<br>
+
+<h3 id="17-8">その他</h3>
+
+・`<Head>`<br>
+`<head>`タグ内に挿入したいタグを記載する
+
+・`<Script>`<br>
+外部スクリプトを読み込む際に使用
