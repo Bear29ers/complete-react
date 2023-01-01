@@ -18,6 +18,7 @@
   <li><a href="#15">パフォーマンスの最適化</a></li>
   <li><a href="#16">Rest APIを使ったサーバーとの通信</a></li>
   <li><a href="#17">Next.js</a></li>
+  <li><a href="#18">Next.jsにおけるレンダリング</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1319,3 +1320,150 @@ href に遷移先の URL を設定する
 
 ・`<Script>`<br>
 外部スクリプトを読み込む際に使用
+<br>
+<br>
+
+<h2 id="18">Next.jsにおけるレンダリング</h2>
+
+<ul>
+<li><a href="18-1">複数のレンダリング方法の選択</a></li>
+<li><a href="18-2">CSR - クライアントサイドレンダリング</a></li>
+<li><a href="18-3">SSR - サーバーサイドレンダリング</a></li>
+<li><a href="18-4">SG - 静的サイト生成</a></li>
+<li><a href="18-5">Next.jsの基本構成</a></li>
+<li><a href="18-6">ISR - インクリメンタル静的再作成</a></li>
+</ul>
+
+<h3 id="18-1">複数のレンダリング方法の選択</h3>
+
+<ul>
+<li>CSR - クライアントサイドレンダリング</li>
+<li><strong>SSR - サーバーサイドレンダリング</strong></li>
+<li><strong>SG - 静的サイト生成</strong></li>
+<li>ISR - インクリメンタル静的再生成</li>
+</ul>
+<br>
+<br>
+
+<h3 id="18-2">CSR - クライアントサイドレンダリング</h3>
+
+・データフェッチやルーティングの全てがクライアント上で行われる
+
+**→ これまで行ってきた React 開発は CSR に分類される**
+
+※ Next.js の開発ではクライアント側で**のみ**行いたい処理は`useEffect`で囲む
+
+<img src="https://user-images.githubusercontent.com/39920490/210177069-52181d7b-1d82-4ac1-8412-e8801e3c4392.png" width="800px" alt="CSR - クライアントサイドレンダリング">
+<br>
+<br>
+
+<ul>
+<li>メリット
+<ul>
+<li>静的なファイルの配置のみで動く</li>
+<li>Node.jsの実行は必要ないため、サーバーの負荷が軽い</li>
+</ul>
+</li>
+<li>デメリット
+<ul>
+<li>初期描画までに時間がかかる</li>
+<li>クローラーによっては<strong>SEO的な問題あり</strong></li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="18-3">SSR - サーバーサイドレンダリング</h3>
+
+<ul>
+<li>Node.js（サーバー）にリクエストが来たタイミングで動的にHTMLを生成</li>
+<li>外部APIへのデータの取得やコンポーネントのpropsの値を決定する処理を行い、HTMLを作成してクライアント側に返却する</li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/39920490/210177070-243a892a-4988-4c16-bcbf-013778f88383.png" width="800px" alt="SSR - サーバーサイドレンダリング">
+<br>
+<br>
+
+<ul>
+<li>メリット
+<ul>
+<li>生成済みのHTMLを取得するのでSEOに強い</li>
+</ul>
+</li>
+<li>デメリット
+<ul>
+<li>生成処理を全てサーバー側でするので負担大</li>
+<li>HTMLをクライアントに渡すまで時間がかかる</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+
+<h3 id="18-4">SG - 静的サイト生成</h3>
+
+<ul>
+<li><strong>ビルド時</strong>にデータフェッチやpropsの値の決定を行い、HTMLを構築する</li>
+<li>クライアントからリクエストされると、サーバー側で構築することなく、生成済みのHTMLを渡す</li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/39920490/210177073-370a19c9-9765-422a-9bd2-96c4ef20badc.png" width="1150px" alt="SG - 静的サイト生成">
+<br>
+<br>
+
+<ul>
+<li>メリット
+<ul>
+<li>構築済みページのため表示速度が早い</li>
+<li>SEOも問題なし</li>
+</ul>
+</li>
+<li>デメリット
+<ul>
+<li>更新頻度が高い動的コンテンツとの相性が悪い</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="18-5">Next.jsの基本構成</h3>
+
+基本的なページは
+
+**SG - 静的サイト生成**
+
+動的に作成する必要があるページは
+
+**SSR - サーバーサイドレンダリング**
+
+を用いる
+<br>
+<br>
+
+<h3 id="18-6">ISR - インクリメンタル静的再作成</h3>
+
+<ul>
+<li>ビルド時にHTMLを構築</li>
+<li>一定時間後にアクセスがあった場合、生成済みのHTMLを返しつつ、サーバー側でHTMLを更新</li>
+<li>次のアクセス時に最新のHTMLを返す</li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/39920490/210177074-986e8257-9a7e-4437-873b-86cdbc3fc949.png" width="1100px" alt="ISR - インクリメンタル静的再作成">
+<br>
+<br>
+
+<ul>
+<li>メリット
+<ul>
+<li>SGを利用しながら動的なコンテンツも更新できる</li>
+</ul>
+</li>
+<li>デメリット
+<ul>
+<li>サーバーの設定が少し手間</li>
+<li>基本はNext.jsの開発元のVercelを使う</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
