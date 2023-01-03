@@ -8,7 +8,13 @@ export default function Header() {
     <header className="header">
       <Link href="/">
         <a>
-          <Image loader={({src}) => src} src="/vercel.svg" alt="vercel" width={177} height={40} />
+          <Image
+            loader={({ src }) => src}
+            src="/vercel.svg"
+            alt="vercel"
+            width={177}
+            height={40}
+          />
         </a>
       </Link>
       <nav>
