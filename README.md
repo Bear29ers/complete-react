@@ -19,6 +19,7 @@
   <li><a href="#16">Rest APIを使ったサーバーとの通信</a></li>
   <li><a href="#17">Next.js</a></li>
   <li><a href="#18">Next.jsにおけるレンダリング</a></li>
+  <li><a href="#19">テスト</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1467,3 +1468,54 @@ href に遷移先の URL を設定する
 </ul>
 <br>
 <br>
+
+<h2 id="19">テスト</h2>
+
+<ul>
+<li><a id="19-1">テストの種類</a></li>
+<li><a id="19-2">@testing-library</a></li>
+<li><a id="19-3">Jest</a></li>
+</ul>
+
+<h3 id="19-1">テストの種類</h3>
+
+##### 単体テスト
+
+関数、コンポーネント単位で行うテスト（**Jest**、**@testing-library**、mocha、chai など）
+
+##### 結合テスト（e2e テスト）
+
+機能を結合し、アプリ全体に対して行うテスト（Selenium、Cypress、Puppeteer など）
+
+##### ※一気通貫テスト
+
+関連システムを含め、エコシステム全体に対して行うテスト
+<br>
+<br>
+
+<h3 id="19-2">@testing-library</h3>
+
+様々なテストライブラリを含むパッケージ
+
+| パッケージ名                | 用途                                           |
+| --------------------------- | ---------------------------------------------- |
+| @testing-library/react      | React のコンポーネントのレンダリングなどに使用 |
+| @testing-library/dom        | DOM のテストに使用                             |
+| @testing-library/jest-dom   | Jest の DOM テストで使用                       |
+| @testing-library/user-event | UI イベントの実行に使用                        |
+
+<br>
+<br>
+
+<h3 id="19-3">Jest</h3>
+
+複雑な設定が必要ないテストフレームワーク
+
+<ul>
+<li>初期設定不要</li>
+<li>テスト用関数（test、expect、toBeなど）が利用可能</li>
+<li>非同期処理のテスト</li>
+<li>外部のAPIのmock化</li>
+</ul>
+
+などが簡単に行える。
