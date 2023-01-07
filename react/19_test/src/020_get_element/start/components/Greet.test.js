@@ -29,6 +29,14 @@ it("should have h1 tag", () => {
   // debug(headingEl);
 
   // containerからquerySelectorで要素を取得
-  const h2El = container.querySelector("h2");
-  debug(h2El);
+  // const h2El = container.querySelector("h2");
+  // debug(h2El);
+
+  // labelタグに紐づいたinput要素を取得
+  // const elByLabel = screen.getByLabelText("氏名");
+  // debug(elByLabel);
+
+  // placeholder属性を設定しているinput要素を取得
+  const elByPlaceholder = screen.getByPlaceholderText("Yuta Okuma");
+  debug(elByPlaceholder);
 });

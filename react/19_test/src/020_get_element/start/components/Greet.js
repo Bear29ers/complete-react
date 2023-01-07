@@ -5,7 +5,7 @@ const Greet = () => {
         <h1>こんばんは</h1>
         <input type="radio" />
         <label htmlFor="fullname">氏名</label>
-        <input id="fullname" type="text" placeholder="氏名" />
+        <input id="fullname" type="text" placeholder="Yuta Okuma" />
         <button>ボタン１</button>
         <button>ボタン２</button>
         <img src="/logo512.png" alt="React Logo" />
