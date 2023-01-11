@@ -1,8 +1,11 @@
 import { useReducer } from "react";
-import { counterReducer } from "../reducer/counterReducer"
+import { counterReducer } from "../reducer/counterReducer";
 
 const Counter = (props) => {
-  const [state, dispatch] = useReducer(counterReducer, { count: props.originCount, step: 1 });
+  const [state, dispatch] = useReducer(counterReducer, {
+    count: props.originCount,
+    step: 1,
+  });
   const countUp = () => {
     dispatch({ type: "up" });
   };
