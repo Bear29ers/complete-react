@@ -20,6 +20,7 @@
   <li><a href="#17">Next.js</a></li>
   <li><a href="#18">Next.jsにおけるレンダリング</a></li>
   <li><a href="#19">テスト</a></li>
+  <li><a href="#20">TypeScript</a></li>
 </ul>
 
 <h2 id="01">React の基礎</h2>
@@ -1519,3 +1520,49 @@ href に遷移先の URL を設定する
 </ul>
 
 などが簡単に行える。
+<br>
+<br>
+
+<h2 id="20">TypeScript</h2>
+
+<ul>
+<li><a href="#20-1">TypeScriptとは</a></li>
+<li><a href="#20-2">TypeScriptの特徴</a></li>
+<li><a href="#20-3">TypeScriptのメリット・デメリット</a></li>
+</ul>
+
+<h3 id="20-1">TypeScriptとは</h3>
+
+JavaScript を拡張したスーパーセットプログラミング言語。
+
+React、Vue、Angular、Svelte などと合わせて使用することができる。
+<br>
+<br>
+
+<h3 id="20-2">TypeScriptの特徴</h3>
+
+<ol>
+<li>JavaScriptに変換してから実行。</li>
+<li>型の定義が可能。</li>
+<li>JavaScriptにない記述が使用可能。</li>
+</ol>
+<br>
+<br>
+
+<h3 id="20-3">TypeScriptのメリット・デメリット</h3>
+
+<ins>メリット</ins>
+
+<ul>
+<li>型定義によるチーム開発の円滑化</li>
+<li>公開用ライブラリへの型定義</li>
+<li>バグの事前検知</li>
+<li>VSCodeの自動補完</li>
+</ul>
+
+<ins>デメリット</ins>
+
+<ul>
+<li>型の記述が面倒</li>
+<li>JavaScript特有の柔軟で簡易な記述の喪失</li>
+</ul>
